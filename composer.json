@@ -1,0 +1,15 @@
+{
+    "name": "learninglocker/xapi-recipe-emitter",
+    "autoload": {
+        "psr-4": {
+          "XREmitter\\": "src/",
+          "Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.6"
+    },
+    "require": {
+        "rusticisoftware/tincan": "0.12.*"
+    }
+}
