@@ -19,7 +19,7 @@ abstract class Event extends PhpObj {
      * @return [string => mixed]
      */
     public function create(array $event) {
-        return $this->create_event($event);
+        return $this->repo->create_event($event);
     }
 
     /**
