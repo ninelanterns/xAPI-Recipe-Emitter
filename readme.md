@@ -8,5 +8,5 @@
 [![License](https://poser.pugx.org/learninglocker/xapi-recipe-emitter/license.svg)](http://opensource.org/licenses/GPL-3.0)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/LearningLocker/learninglocker?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-- [Read documentation](https://github.com/LearningLocker/xAPI-Recipe-Emitter/blob/master/docs).
+- [Read documentation](https://github.com/LearningLocker/xAPI-Recipe-Emitter/blob/master/docs/readme.md).
 - [Report bugs, enhancements, and questions](https://github.com/LearningLocker/xAPI-Recipe-Emitter/blob/master/contributing.md#issue-templates).
