@@ -10,11 +10,11 @@ Mapping for recipe names to recipe classes can be found in the [Controller](../s
 
 Recipe Name | Recipe Class | Test
 --- | --- | ---
-course_viewed | [CourseViewed](../src/events/CourseViewed.php) | [CourseViewedTest](../tests/CourseViewedTest.php)
-module_viewed | [ModuleEvent](../src/events/ModuleViewed.php) | [ModuleEventTest](../tests/ModuleViewedTest.php)
-attempt_started | [AttemptStarted](../src/events/AttemptStarted.php) | [AttemptStartedTest](../tests/AttemptStartedTest.php)
-attempt_completed | [AttemptCompleted](../src/events/AttemptCompleted.php) | [AttemptCompletedTest](../tests/AttemptCompletedTest.php)
-user_loggedin | [UserLoggedin](../src/events/UserLoggedin.php) | [UserLoggedinTest](../tests/UserLoggedinTest.php)
-user_loggedout | [UserLoggedout](../src/events/UserLoggedout.php) | [UserLoggedoutTest](../tests/UserLoggedoutTest.php)
-assignment_graded | [AssignmentGraded](../src/events/AssignmentGraded.php) | [AssignmentGradedTest](../tests/AssignmentGradedTest.php)
-assignment_submitted | [AssignmentSubmitted](../src/events/AssignmentSubmitted.php) | [AssignmentSubmittedTest](../tests/AssignmentSubmittedTest.php)
+course_viewed | [CourseViewed](../src/Events/CourseViewed.php) | [CourseViewedTest](../tests/CourseViewedTest.php)
+module_viewed | [ModuleEvent](../src/Events/ModuleViewed.php) | [ModuleEventTest](../tests/ModuleViewedTest.php)
+attempt_started | [AttemptStarted](../src/Events/AttemptStarted.php) | [AttemptStartedTest](../tests/AttemptStartedTest.php)
+attempt_completed | [AttemptCompleted](../src/Events/AttemptCompleted.php) | [AttemptCompletedTest](../tests/AttemptCompletedTest.php)
+user_loggedin | [UserLoggedin](../src/Events/UserLoggedin.php) | [UserLoggedinTest](../tests/UserLoggedinTest.php)
+user_loggedout | [UserLoggedout](../src/Events/UserLoggedout.php) | [UserLoggedoutTest](../tests/UserLoggedoutTest.php)
+assignment_graded | [AssignmentGraded](../src/Events/AssignmentGraded.php) | [AssignmentGradedTest](../tests/AssignmentGradedTest.php)
+assignment_submitted | [AssignmentSubmitted](../src/Events/AssignmentSubmitted.php) | [AssignmentSubmittedTest](../tests/AssignmentSubmittedTest.php)
