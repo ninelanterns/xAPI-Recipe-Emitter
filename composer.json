@@ -1,5 +1,6 @@
 {
     "name": "learninglocker/xapi-recipe-emitter",
+    "license": "GPL v3",
     "autoload": {
         "psr-4": {
           "XREmitter\\": "src/",
