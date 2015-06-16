@@ -31,7 +31,9 @@ class Controller extends PhpObj {
         $route = isset($opts['recipe']) ? $opts['recipe'] : '';
         if (isset(static::$routes[$route])) {
             $event = '\XREmitter\Events\\'.static::$routes[$route];
-            return (new $event($this->repo))->read($opts);
+            $service = new $event($this->repo);
+            $statement = $service->read($opts);
+            return $service->create($statement);
         } else {
             return null;
         }

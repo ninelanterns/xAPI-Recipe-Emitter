@@ -14,6 +14,15 @@ abstract class Event extends PhpObj {
     }
 
     /**
+     * Creates an event in the repository.
+     * @param [string => mixed] $event
+     * @return [string => mixed]
+     */
+    public function create(array $event) {
+        return $this->create_event($event);
+    }
+
+    /**
      * Reads data for an event.
      * @param [String => Mixed] $opts
      * @return [String => Mixed]
