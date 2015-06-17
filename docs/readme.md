@@ -11,7 +11,7 @@ Mapping for recipe names to recipe classes can be found in the [Controller](../s
 Recipe Name | Recipe Class | Test | Example
 --- | --- | --- | ---
 course_viewed | [CourseViewed](../src/Events/CourseViewed.php) | [CourseViewedTest](../tests/CourseViewedTest.php) | [CourseViewed](examples/CourseViewed.json)
-module_viewed | [ModuleEvent](../src/Events/ModuleViewed.php) | [ModuleEventTest](../tests/ModuleViewedTest.php) | [ModuleEvent](examples/ModuleViewed.json)
+module_viewed | [ModuleViewed](../src/Events/ModuleViewed.php) | [ModuleViewedTest](../tests/ModuleViewedTest.php) | [ModuleViewed](examples/ModuleViewed.json)
 attempt_started | [AttemptStarted](../src/Events/AttemptStarted.php) | [AttemptStartedTest](../tests/AttemptStartedTest.php) | [AttemptStarted](examples/AttemptStarted.json)
 attempt_completed | [AttemptCompleted](../src/Events/AttemptCompleted.php) | [AttemptCompletedTest](../tests/AttemptCompletedTest.php) | [AttemptCompleted](examples/AttemptCompleted.json)
 user_loggedin | [UserLoggedin](../src/Events/UserLoggedin.php) | [UserLoggedinTest](../tests/UserLoggedinTest.php) | [UserLoggedin](examples/UserLoggedin.json)
