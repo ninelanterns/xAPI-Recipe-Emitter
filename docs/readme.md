@@ -17,4 +17,4 @@ attempt_completed | [AttemptCompleted](../src/Events/AttemptCompleted.php) | [At
 user_loggedin | [UserLoggedin](../src/Events/UserLoggedin.php) | [UserLoggedinTest](../tests/UserLoggedinTest.php) | [UserLoggedin](examples/UserLoggedin.json)
 user_loggedout | [UserLoggedout](../src/Events/UserLoggedout.php) | [UserLoggedoutTest](../tests/UserLoggedoutTest.php) | [UserLoggedout](examples/UserLoggedout.json)
 assignment_graded | [AssignmentGraded](../src/Events/AssignmentGraded.php) | [AssignmentGradedTest](../tests/AssignmentGradedTest.php) | [AssignmentGraded](examples/AssignmentGraded.json)
-assignment_submitted | [AssignmentSubmitted](../src/Events/AssignmentSubmitted.php) | [AssignmentSubmittedTest](../tests/AssignmentSubmittedTest.php) | [AssignmentSubmitted](examples/AssignmentSubmitted.json)
+assignment_submitted | [AssignmentEvaluated](../src/Events/AssignmentEvaluated.php) | [AssignmentEvaluatedTest](../tests/AssignmentEvaluatedTest.php) | [AssignmentEvaluated](examples/AssignmentEvaluated.json)
