@@ -2,7 +2,7 @@
     "version": "1.0.0",
     "actor": {
         "objectType": "Agent",
-        "name": "ben@ht2.co.uk",
+        "name": "ryansmith",
         "account": {
             "name": "2",
             "homePage": "http://localhost/moodle"
