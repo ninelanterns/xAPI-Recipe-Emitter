@@ -17,7 +17,7 @@
     },
     "result": {
         "score": {
-            "raw": 100
+            "raw": 34
         },
         "completion": true
     },
@@ -68,8 +68,56 @@
                                 "requested": "0",
                                 "enablecompletion": "0",
                                 "completionnotify": "0",
-                                "cacherev": "1434617029",
+                                "cacherev": "1434621381",
                                 "url": "http://localhost/moodle/course.php?id=2"
+                            }
+                        }
+                    }
+                },
+                {
+                    "objectType": "Activity",
+                    "id": "http://localhost/moodle/mod/assign/view.php?id=11",
+                    "definition": {
+                        "type": "http://adlnet.gov/expapi/activities/module",
+                        "name": {
+                            "en-GB": "My Test Assignment 3",
+                            "en-US": "My Test Assignment 3"
+                        },
+                        "description": {
+                            "en-GB": "A module",
+                            "en-US": "A module"
+                        },
+                        "extensions": {
+                            "http://lrs.learninglocker.net/define/extensions/moodle_module": {
+                                "id": "4",
+                                "course": "2",
+                                "name": "My Test Assignment 3",
+                                "intro": "",
+                                "introformat": "1",
+                                "alwaysshowdescription": "1",
+                                "nosubmissions": "0",
+                                "submissiondrafts": "0",
+                                "sendnotifications": "0",
+                                "sendlatenotifications": "0",
+                                "duedate": "1435186800",
+                                "allowsubmissionsfromdate": "1434582000",
+                                "grade": "100",
+                                "timemodified": "1434617027",
+                                "requiresubmissionstatement": "0",
+                                "completionsubmit": "0",
+                                "cutoffdate": "0",
+                                "teamsubmission": "0",
+                                "requireallteammemberssubmit": "0",
+                                "teamsubmissiongroupingid": "0",
+                                "blindmarking": "0",
+                                "revealidentities": "0",
+                                "attemptreopenmethod": "none",
+                                "maxattempts": "-1",
+                                "markingworkflow": "0",
+                                "markingallocation": "0",
+                                "sendstudentnotifications": "1",
+                                "preventsubmissionnotingroup": "0",
+                                "url": "http://localhost/moodle/mod/assign/view.php?id=11"
                             }
                         }
                     }
@@ -83,70 +131,30 @@
                 "component": "mod_assign",
                 "action": "graded",
                 "objecttable": "assign_grades",
-                "objectid": 4,
+                "objectid": 6,
                 "crud": "u",
                 "edulevel": 1,
-                "contextid": 50,
+                "contextid": 51,
                 "contextlevel": 70,
-                "contextinstanceid": "10",
+                "contextinstanceid": "11",
                 "userid": "2",
                 "courseid": "2",
                 "relateduserid": "2",
                 "other": "N;",
-                "timecreated": 1434617077,
+                "timecreated": 1434621423,
                 "origin": "web",
                 "ip": "127.0.0.1",
                 "object": "submission"
             }
         }
     },
-    "timestamp": "2015-06-18T09:44:37+01:00",
+    "timestamp": "2015-06-18T10:57:03+01:00",
     "object": {
-        "objectType": "Activity",
-        "id": "http://localhost/moodle/mod/assign/view.php?id=10",
-        "definition": {
-            "type": "http://adlnet.gov/expapi/activities/module",
-            "name": {
-                "en-GB": "My Test Assignment 3",
-                "en-US": "My Test Assignment 3"
-            },
-            "description": {
-                "en-GB": "A module",
-                "en-US": "A module"
-            },
-            "extensions": {
-                "http://lrs.learninglocker.net/define/extensions/moodle_module": {
-                    "id": "3",
-                    "course": "2",
-                    "name": "My Test Assignment 3",
-                    "intro": "",
-                    "introformat": "1",
-                    "alwaysshowdescription": "1",
-                    "nosubmissions": "0",
-                    "submissiondrafts": "0",
-                    "sendnotifications": "0",
-                    "sendlatenotifications": "0",
-                    "duedate": "1435186800",
-                    "allowsubmissionsfromdate": "1434582000",
-                    "grade": "100",
-                    "timemodified": "1434617027",
-                    "requiresubmissionstatement": "0",
-                    "completionsubmit": "0",
-                    "cutoffdate": "0",
-                    "teamsubmission": "0",
-                    "requireallteammemberssubmit": "0",
-                    "teamsubmissiongroupingid": "0",
-                    "blindmarking": "0",
-                    "revealidentities": "0",
-                    "attemptreopenmethod": "none",
-                    "maxattempts": "-1",
-                    "markingworkflow": "0",
-                    "markingallocation": "0",
-                    "sendstudentnotifications": "1",
-                    "preventsubmissionnotingroup": "0",
-                    "url": "http://localhost/moodle/mod/assign/view.php?id=10"
-                }
-            }
+        "objectType": "Agent",
+        "name": "ryansmith",
+        "account": {
+            "name": "2",
+            "homePage": "http://localhost/moodle"
         }
     },
     "authority": {
@@ -154,6 +162,6 @@
         "name": "New Client",
         "mbox": "mailto:hello@learninglocker.net"
     },
-    "stored": "2015-06-18T08:44:37.698500+00:00",
-    "id": "245686a8-42f4-4015-b658-bf6b493ef7e0"
+    "stored": "2015-06-18T09:57:04.388200+00:00",
+    "id": "a8248852-68b4-4206-9006-4848a295cd3e"
 }
