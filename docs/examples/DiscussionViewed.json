@@ -108,32 +108,20 @@
                 "en-US": "<p>sdfsdfdfsdf</p>"
             },
             "extensions": {
-                "http://lrs.learninglocker.net/define/extensions/moodle_module": {
-                    "id": "52",
+                "http://lrs.learninglocker.net/define/extensions/moodle_discussion": {
+                    "id": "1",
                     "course": "31",
-                    "type": "news",
+                    "forum": "52",
                     "name": "My Forum",
-                    "intro": "<p>sdfsdfdfsdf</p>",
-                    "introformat": "1",
+                    "firstpost": "1",
+                    "userid": "2",
+                    "groupid": "-1",
                     "assessed": "0",
-                    "assesstimestart": "0",
-                    "assesstimefinish": "0",
-                    "scale": "1",
-                    "maxbytes": "0",
-                    "maxattachments": "1",
-                    "forcesubscribe": "1",
-                    "trackingtype": "1",
-                    "rsstype": "0",
-                    "rssarticles": "0",
-                    "timemodified": "1369751485",
-                    "warnafter": "0",
-                    "blockafter": "0",
-                    "blockperiod": "0",
-                    "completiondiscussions": "0",
-                    "completionreplies": "0",
-                    "completionposts": "0",
-                    "displaywordcount": "0",
-                    "url": "http://www.example.com/mod/forum/view.php?id=1"
+                    "timemodified": "1435531416",
+                    "usermodified": "2",
+                    "timestart": "0",
+                    "timeend": "0",
+                    "url": "http://www.example.com/mod/forum/discuss.php?d=1"
                 }
             }
         }
