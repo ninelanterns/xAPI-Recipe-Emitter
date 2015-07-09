@@ -96,9 +96,9 @@
     "timestamp": "2015-07-09T11:12:08-04:00",
     "object": {
         "objectType": "Activity",
-        "id": "http://www.example.com/mod/forum/view.php?id=1",
+        "id": "http://www.example.com/mod/forum/discuss.php?d=1",
         "definition": {
-            "type": "http://adlnet.gov/expapi/activities/module",
+            "type": "http://adlnet.gov/expapi/activities/interaction",
             "name": {
                 "en-GB": "My Forum",
                 "en-US": "My Forum"
