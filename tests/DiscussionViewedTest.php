@@ -1,5 +1,5 @@
 <?php namespace Tests;
-use \XREmitter\Events\ModuleViewed as Event;
+use \XREmitter\Events\DiscussionViewed as Event;
 
 class DiscussionViewedTest extends EventTest {
     protected static $recipe_name = 'discussion_viewed';
