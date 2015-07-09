@@ -128,5 +128,7 @@ abstract class EventTest extends PhpUnitTestCase {
     
     protected function assertDiscussion($input, $output) {
         $this->assertEquals($input['discussion_url'], $output['id']);
+        $this->assertEquals($input['discussion_name'], $output['definition']['name']['en-GB']);
+        $this->assertEquals($input['discussion_name'], $output['definition']['name']['en-US']);
     }
 }
