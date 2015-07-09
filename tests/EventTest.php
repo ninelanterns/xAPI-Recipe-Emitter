@@ -75,6 +75,12 @@ abstract class EventTest extends PhpUnitTestCase {
             'attempt_name' => 'Test attempt_name',
         ];
     }
+    
+    protected function constructDiscussion() {
+        return [
+            'discussion_url' => 'http://www.example.com/discussion_url',
+        ];
+    }
 
     protected function assertOutput($input, $output) {
         $this->assertUser($input, $output['actor']);
@@ -118,5 +124,9 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input['attempt_name'], $output['definition']['name']['en-US']);
         $this->assertArrayHasKey($input['attempt_ext_key'], $output['definition']['extensions']);
         $this->assertEquals($input['attempt_ext'], $output['definition']['extensions'][$input['attempt_ext_key']]);
+    }
+    
+    protected function assertDiscussion($input, $output) {
+        $this->assertEquals($input['discussion_url'], $output['id']);
     }
 }

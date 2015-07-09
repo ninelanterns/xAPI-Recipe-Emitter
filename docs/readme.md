@@ -18,3 +18,4 @@ user_loggedin | [UserLoggedin](../src/events/UserLoggedin.php) | [UserLoggedinTe
 user_loggedout | [UserLoggedout](../src/events/UserLoggedout.php) | [UserLoggedoutTest](../tests/UserLoggedoutTest.php)
 assignment_graded | [AssignmentGraded](../src/events/AssignmentGraded.php) | [AssignmentGradedTest](../tests/AssignmentGradedTest.php)
 assignment_submitted | [AssignmentSubmitted](../src/events/AssignmentSubmitted.php) | [AssignmentSubmittedTest](../tests/AssignmentSubmittedTest.php)
+discussion_viewed | [DiscussionViewed](../src/events/DicussionViewed.php) | [DiscussionViewedTest](../tests/DiscussionViewedTest.php)
