@@ -11,8 +11,8 @@ class Controller extends PhpObj {
         'attempt_completed' => 'AttemptCompleted',
         'user_loggedin' => 'UserLoggedin',
         'user_loggedout' => 'UserLoggedout',
-        'submission_graded' => 'AssignmentGraded',
-        'assessable_submitted' => 'AssignmentSubmitted',
+        'assignment_graded' => 'AssignmentGraded',
+        'assignment_submitted' => 'AssignmentSubmitted',
     ];
 
     /**
@@ -32,7 +32,9 @@ class Controller extends PhpObj {
         $route = isset($opts['recipe']) ? $opts['recipe'] : '';
         if (isset(static::$routes[$route])) {
             $event = '\XREmitter\Events\\'.static::$routes[$route];
-            return (new $event($this->repo))->read($opts);
+            $service = new $event($this->repo);
+            $statement = $service->read($opts);
+            return $service->create($statement);
         } else {
             return null;
         }

@@ -1,5 +1,6 @@
 <?php namespace XREmitter;
 use \TinCan\RemoteLRS as TinCanRemoteLrs;
+use \TinCan\Statement as TinCanStatement;
 use \stdClass as PhpObj;
 
 class Repository extends PhpObj {
@@ -19,8 +20,8 @@ class Repository extends PhpObj {
      * @param [string => mixed] $event
      * @return [string => mixed]
      */
-    public function create_event(array $event) {
-        $this->store->saveStatement(new tincan_statement($event));
+    public function createEvent(array $event) {
+        $this->store->saveStatement(new TinCanStatement($event));
         return $event;
     }
 }
