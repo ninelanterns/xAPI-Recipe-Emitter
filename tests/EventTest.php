@@ -125,8 +125,4 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertArrayHasKey($input['attempt_ext_key'], $output['definition']['extensions']);
         $this->assertEquals($input['attempt_ext'], $output['definition']['extensions'][$input['attempt_ext_key']]);
     }
-    
-    protected function assertDiscussion($input, $output) {
-        $this->assertEquals($input['discussion_url'], $output['id']);
-    }
 }
