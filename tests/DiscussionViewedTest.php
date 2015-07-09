@@ -24,6 +24,7 @@ class DiscussionViewedTest extends EventTest {
     protected function assertOutput($input, $output) {
         parent::assertOutput($input, $output);
         $this->assertVerb('http://id.tincanapi.com/verb/viewed', 'viewed', $output['verb']);
+        $this->assertObject('discussion', $input, $output['object']);
         $this->assertObject('module', $input, $output['context']['contextActivities']['grouping'][0]);
     }
 }
