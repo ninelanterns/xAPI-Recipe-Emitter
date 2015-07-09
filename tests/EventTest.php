@@ -79,6 +79,7 @@ abstract class EventTest extends PhpUnitTestCase {
     protected function constructDiscussion() {
         return [
             'discussion_url' => 'http://www.example.com/discussion_url',
+            'discussion_name' => 'Test discussion_name',
         ];
     }
 
