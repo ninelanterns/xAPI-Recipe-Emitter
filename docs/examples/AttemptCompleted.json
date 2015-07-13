@@ -37,41 +37,6 @@
                         "description": {
                             "en-GB": "<p>A test course.</p>",
                             "en-US": "<p>A test course.</p>"
-                        },
-                        "extensions": {
-                            "http://lrs.learninglocker.net/define/extensions/moodle_course": {
-                                "id": "2",
-                                "category": "1",
-                                "sortorder": "10002",
-                                "fullname": "My Test Course 1",
-                                "shortname": "MTC1",
-                                "idnumber": "MTC1",
-                                "summary": "<p>A test course.</p>",
-                                "summaryformat": "1",
-                                "format": "weeks",
-                                "showgrades": "1",
-                                "newsitems": "5",
-                                "startdate": "1433890800",
-                                "marker": "0",
-                                "maxbytes": "0",
-                                "legacyfiles": "0",
-                                "showreports": "0",
-                                "visible": "1",
-                                "visibleold": "1",
-                                "groupmode": "0",
-                                "groupmodeforce": "0",
-                                "defaultgroupingid": "0",
-                                "lang": "",
-                                "calendartype": "",
-                                "theme": "",
-                                "timecreated": "1433844784",
-                                "timemodified": "1433844784",
-                                "requested": "0",
-                                "enablecompletion": "0",
-                                "completionnotify": "0",
-                                "cacherev": "1434018611",
-                                "url": "http://localhost/moodle/course.php?id=2"
-                            }
                         }
                     }
                 },
@@ -87,51 +52,6 @@
                         "description": {
                             "en-GB": "A module",
                             "en-US": "A module"
-                        },
-                        "extensions": {
-                            "http://lrs.learninglocker.net/define/extensions/moodle_module": {
-                                "id": "1",
-                                "course": "2",
-                                "name": "My Test Quiz 1",
-                                "intro": "",
-                                "introformat": "1",
-                                "timeopen": "0",
-                                "timeclose": "0",
-                                "timelimit": "0",
-                                "overduehandling": "autosubmit",
-                                "graceperiod": "0",
-                                "preferredbehaviour": "deferredfeedback",
-                                "canredoquestions": "0",
-                                "attempts": "0",
-                                "attemptonlast": "0",
-                                "grademethod": "1",
-                                "decimalpoints": "2",
-                                "questiondecimalpoints": "-1",
-                                "reviewattempt": "69904",
-                                "reviewcorrectness": "4368",
-                                "reviewmarks": "4368",
-                                "reviewspecificfeedback": "4368",
-                                "reviewgeneralfeedback": "4368",
-                                "reviewrightanswer": "4368",
-                                "reviewoverallfeedback": "4368",
-                                "questionsperpage": "0",
-                                "navmethod": "free",
-                                "shuffleanswers": "1",
-                                "sumgrades": "1.00000",
-                                "grade": "1.00000",
-                                "timecreated": "0",
-                                "timemodified": "1433861865",
-                                "password": "",
-                                "subnet": "",
-                                "browsersecurity": "-",
-                                "delay1": "0",
-                                "delay2": "0",
-                                "showuserpicture": "0",
-                                "showblocks": "0",
-                                "completionattemptsexhausted": "0",
-                                "completionpass": "0",
-                                "url": "http://localhost/moodle/mod/quiz/view.php?id=3"
-                            }
                         }
                     }
                 }
@@ -170,26 +90,6 @@
             "name": {
                 "en-GB": "Attempt 42",
                 "en-US": "Attempt 42"
-            },
-            "extensions": {
-                "http://lrs.learninglocker.net/define/extensions/moodle_attempt": {
-                    "id": "42",
-                    "quiz": "1",
-                    "userid": "3",
-                    "attempt": "1",
-                    "uniqueid": "42",
-                    "layout": "1,0",
-                    "currentpage": "0",
-                    "preview": "0",
-                    "state": "finished",
-                    "timestart": "1434553288",
-                    "timefinish": "1434553320",
-                    "timemodified": "1434553320",
-                    "timecheckstate": null,
-                    "sumgrades": "1.00000",
-                    "url": "http://localhost/moodle/mod/quiz/attempt.php?attempt=42",
-                    "name": "Attempt 42"
-                }
             }
         }
     },

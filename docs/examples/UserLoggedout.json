@@ -49,11 +49,6 @@
             "description": {
                 "en-GB": "A Moodle course",
                 "en-US": "A Moodle course"
-            },
-            "extensions": {
-                "http://lrs.learninglocker.net/define/extensions/moodle_course": {
-                    "url": "http://localhost/moodle"
-                }
             }
         }
     },
