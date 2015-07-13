@@ -102,8 +102,6 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input[$type.'_name'], $output['definition']['name']['en-US']);
         $this->assertEquals($input[$type.'_description'], $output['definition']['description']['en-GB']);
         $this->assertEquals($input[$type.'_description'], $output['definition']['description']['en-US']);
-        $this->assertArrayHasKey($input[$type.'_ext_key'], $output['definition']['extensions']);
-        $this->assertEquals($input[$type.'_ext'], $output['definition']['extensions'][$input[$type.'_ext_key']]);
     }
 
     protected function assertVerb($verb_id, $verb_name, $output) {
