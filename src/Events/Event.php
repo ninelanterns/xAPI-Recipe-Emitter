@@ -80,6 +80,6 @@ abstract class Event extends PhpObj {
     }
     
     protected function readDiscussion($opts) {
-        return $this->readActivity($opts, 'discussion', 'http://id.tincanapi.com/verb/viewed');
+        return $this->readActivity($opts, 'discussion', 'http://id.tincanapi.com/activitytype/discussion');
     }
 }
