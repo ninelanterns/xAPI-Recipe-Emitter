@@ -9,10 +9,11 @@ class DiscussionViewed extends Viewed {
      */
     public function read(array $opts) {
         return array_merge_recursive(parent::read($opts), [
-            'object' => $this->readDiscussion($opts, 'discussion', 'http://id.tincanapi.com/verb/viewed'),
+            'object' => $this->readDiscussion($opts, 'discussion', 'http://id.tincanapi.com/activitytype/discussion'),
             'context' => [
                 'contextActivities' => [
                     'grouping' => [
+                        $this->readCourse($opts, 'course', 'http://adlnet.gov/expapi/activities/course'),
                         $this->readModule($opts, 'module', 'http://adlnet.gov/expapi/activities/module'),
                     ],
                 ],

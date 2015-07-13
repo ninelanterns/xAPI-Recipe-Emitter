@@ -67,6 +67,50 @@
                             }
                         }
                     }
+                },
+                {
+                    "objectType": "Activity",
+                    "id": "http://www.example.com/mod/forum/view.php?id=123",
+                    "definition": {
+                        "type": "http://adlnet.gov/expapi/activities/module",
+                        "name": {
+                            "en-GB": "My forum",
+                            "en-US": "My forum"
+                        },
+                        "description": {
+                            "en-GB": "<p>sdfsdfdfsdf</p>",
+                            "en-US": "<p>sdfsdfdfsdf</p>"
+                        },
+                        "extensions": {
+                            "http://lrs.learninglocker.net/define/extensions/moodle_module": {
+                                "id": "1",
+                                "course": "2",
+                                "type": "tag",
+                                "name": "My forum",
+                                "intro": "<p>sdfsdfdfsdf</p>",
+                                "introformat": "1",
+                                "assessed": "0",
+                                "assesstimestart": "0",
+                                "assesstimefinish": "0",
+                                "scale": "1",
+                                "maxbytes": "0",
+                                "maxattachments": "1",
+                                "forcesubscribe": "1",
+                                "trackingtype": "1",
+                                "rsstype": "0",
+                                "rssarticles": "0",
+                                "timemodified": "1369751485",
+                                "warnafter": "0",
+                                "blockafter": "0",
+                                "blockperiod": "0",
+                                "completiondiscussions": "0",
+                                "completionreplies": "0",
+                                "completionposts": "0",
+                                "displaywordcount": "0",
+                                "url": "www.example.com/mod/forum/view.php?id=182"
+                            }
+                        }
+                    }
                 }
             ]
         },
