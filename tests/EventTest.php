@@ -75,6 +75,18 @@ abstract class EventTest extends PhpUnitTestCase {
             'attempt_name' => 'Test attempt_name',
         ];
     }
+    
+    protected function constructDiscussion() {
+        return [
+            'discussion_url' => 'http://www.example.com/discussion_url',
+            'discussion_name' => 'A Forum Post',
+            'discussion_description' => 'A description of the forum',
+            'discussion_ext_key' => 'http://www.example.com/attempt_ext_key',
+            'discussion_ext' => [
+                'discussion_ext_key' => 'discussion_ext_value',
+            ],
+        ];
+    }
 
     protected function assertOutput($input, $output) {
         $this->assertUser($input, $output['actor'], 'user');

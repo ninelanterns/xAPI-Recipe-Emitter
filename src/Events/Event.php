@@ -75,4 +75,8 @@ abstract class Event extends PhpObj {
     protected function readModule($opts) {
         return $this->readActivity($opts, 'module', 'http://adlnet.gov/expapi/activities/module');
     }
+    
+    protected function readDiscussion($opts) {
+        return $this->readActivity($opts, 'discussion', 'http://id.tincanapi.com/activitytype/discussion');
+    }
 }
