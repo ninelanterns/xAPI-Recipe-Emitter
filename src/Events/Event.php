@@ -60,9 +60,6 @@ abstract class Event extends PhpObj {
                     'en-GB' => $opts[$key.'_description'],
                     'en-US' => $opts[$key.'_description'],
                 ],
-                'extensions' => [
-                    $opts[$key.'_ext_key'] => $opts[$key.'_ext']
-                ],
             ],
         ];
     }
