@@ -14,7 +14,7 @@ class DiscussionViewed extends Viewed {
                 'contextActivities' => [
                     'grouping' => [
                         $this->readCourse($opts, 'course', 'http://adlnet.gov/expapi/activities/course'),
-                        $this->readModule($opts, 'module', 'http://adlnet.gov/expapi/activities/module'),
+                        $this->readModule($opts),
                     ],
                 ],
             ],

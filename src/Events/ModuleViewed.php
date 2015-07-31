@@ -9,7 +9,7 @@ class ModuleViewed extends Viewed {
      */
     public function read(array $opts) {
         return array_merge_recursive(parent::read($opts), [
-            'object' => $this->readModule($opts, 'module', 'http://adlnet.gov/expapi/activities/module'),
+            'object' => $this->readModule($opts),
             'context' => [
                 'contextActivities' => [
                     'grouping' => [
