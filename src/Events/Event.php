@@ -42,6 +42,11 @@ abstract class Event extends PhpObj {
                 'extensions' => [
                     $opts['context_ext_key'] => $opts['context_ext'],
                 ],
+                'contextActivities' => [
+                    'grouping' => [
+                        $this->readApp($opts),
+                    ],
+                ],
             ],
             'timestamp' => $opts['time'],
         ];
