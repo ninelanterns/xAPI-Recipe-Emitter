@@ -19,7 +19,7 @@ class AttemptStarted extends Event {
             'object' => [
                 'id' => $opts['attempt_url'],
                 'definition' => [
-                    'type' => 'http://activitystrea.ms/schema/1.0/page',
+                    'type' => $opts['attempt_type'],
                     'name' => [
                         'en-GB' => $opts['attempt_name'],
                         'en-US' => $opts['attempt_name'],

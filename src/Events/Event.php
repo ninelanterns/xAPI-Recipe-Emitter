@@ -52,11 +52,11 @@ abstract class Event extends PhpObj {
         ];
     }
 
-    protected function readActivity(array $opts, $key, $type) {
+    protected function readActivity(array $opts, $key) {
         return [
             'id' => $opts[$key.'_url'],
             'definition' => [
-                'type' => $type,
+                'type' => $opts[$key.'_type'],
                 'name' => [
                     'en-GB' => $opts[$key.'_name'],
                     'en-US' => $opts[$key.'_name'],
@@ -70,18 +70,18 @@ abstract class Event extends PhpObj {
     }
 
     protected function readCourse($opts) {
-        return $this->readActivity($opts, 'course', 'http://adlnet.gov/expapi/activities/course');
+        return $this->readActivity($opts, 'course');
     }
 
     protected function readApp($opts) {
-        return $this->readActivity($opts, 'app', 'http://activitystrea.ms/schema/1.0/application');
+        return $this->readActivity($opts, 'app');
     }
 
     protected function readModule($opts) {
-        return $this->readActivity($opts, 'module', 'http://adlnet.gov/expapi/activities/module');
+        return $this->readActivity($opts, 'module');
     }
     
     protected function readDiscussion($opts) {
-        return $this->readActivity($opts, 'discussion', 'http://id.tincanapi.com/activitytype/discussion');
+        return $this->readActivity($opts, 'discussion');
     }
 }
