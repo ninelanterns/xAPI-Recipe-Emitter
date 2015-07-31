@@ -25,8 +25,8 @@ class AssignmentGradedTest extends EventTest {
     protected function assertOutput($input, $output) {
         parent::assertOutput($input, $output);
         $this->assertVerb('http://www.tincanapi.co.uk/verbs/evaluated', 'evaluated', $output['verb']);
-        $this->assertObject('module', $input, $output['context']['contextActivities']['grouping'][1]);
-        $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][0]);
+        $this->assertObject('module', $input, $output['context']['contextActivities']['grouping'][2]);
+        $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][1]);
         $this->assertEquals($input['grade_result'], $output['result']['score']['raw']);
         $this->assertEquals(true, $output['result']['completion']);
         $this->assertUser($input, $output['object'], 'graded_user');

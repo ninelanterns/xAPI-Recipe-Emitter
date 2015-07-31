@@ -26,6 +26,21 @@
             "grouping": [
                 {
                     "objectType": "Activity",
+                    "id": "http://localhost/moodle/course.php?id=1",
+                    "definition": {
+                        "type": "http://activitystrea.ms/schema/1.0/application",
+                        "name": {
+                            "en-GB": "My Test Site",
+                            "en-US": "My Test Site"
+                        },
+                        "description": {
+                            "en-GB": "<p>A test site.</p>",
+                            "en-US": "<p>A test site.</p>"
+                        }
+                    }
+                },
+                {
+                    "objectType": "Activity",
                     "id": "http://localhost/moodle/course.php?id=2",
                     "definition": {
                         "type": "http://adlnet.gov/expapi/activities/course",
