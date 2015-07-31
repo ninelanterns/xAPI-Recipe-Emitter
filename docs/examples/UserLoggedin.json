@@ -41,7 +41,7 @@
                     "objectType": "Activity",
                     "id": "http://localhost/moodle/course.php?id=1",
                     "definition": {
-                        "type": "http://activitystrea.ms/schema/1.0/application",
+                        "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
                             "en-GB": "My Test Site",
                             "en-US": "My Test Site"
@@ -60,7 +60,7 @@
         "objectType": "Activity",
         "id": "http://localhost/moodle",
         "definition": {
-            "type": "http://activitystrea.ms/schema/1.0/application",
+            "type": "http://lrs.learninglocker.net/define/type/moodle/course",
             "name": {
                 "en-GB": "A Moodle course",
                 "en-US": "A Moodle course"

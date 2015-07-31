@@ -22,7 +22,7 @@
                     "objectType": "Activity",
                     "id": "http://localhost/moodle/course.php?id=1",
                     "definition": {
-                        "type": "http://activitystrea.ms/schema/1.0/application",
+                        "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
                             "en-GB": "My Test Site",
                             "en-US": "My Test Site"
@@ -37,7 +37,7 @@
                     "objectType": "Activity",
                     "id": "http://localhost/moodle/course.php?id=2",
                     "definition": {
-                        "type": "http://adlnet.gov/expapi/activities/course",
+                        "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
                             "en-GB": "My Test Course 1",
                             "en-US": "My Test Course 1"
@@ -52,7 +52,7 @@
                     "objectType": "Activity",
                     "id": "http://www.example.com/mod/forum/view.php?id=123",
                     "definition": {
-                        "type": "http://adlnet.gov/expapi/activities/module",
+                        "type": "http://lrs.learninglocker.net/define/type/moodle/forum",
                         "name": {
                             "en-GB": "My forum",
                             "en-US": "My forum"
@@ -93,7 +93,7 @@
         "objectType": "Activity",
         "id": "http://www.example.com/mod/forum/discuss.php?d=1",
         "definition": {
-            "type": "http://adlnet.gov/expapi/activities/interaction",
+            "type": "http://lrs.learninglocker.net/define/type/moodle/discussion",
             "name": {
                 "en-GB": "My Forum",
                 "en-US": "My Forum"
