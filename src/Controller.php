@@ -33,6 +33,7 @@ class Controller extends PhpObj {
         if (isset(static::$routes[$route])) {
             $event = '\XREmitter\Events\\'.static::$routes[$route];
             $service = new $event($this->repo);
+            $opts['context_lang'] = $opts['context_lang'] ?: 'en';
             $statement = $service->read($opts);
             return $service->create($statement);
         } else {
