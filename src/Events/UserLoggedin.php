@@ -1,6 +1,10 @@
 <?php namespace XREmitter\Events;
 
 class UserLoggedin extends Event {
+    protected static $verb_display = [
+        'en' => 'logged in to'
+    ];
+
     /**
      * Reads data for an event.
      * @param [String => Mixed] $opts
@@ -11,10 +15,7 @@ class UserLoggedin extends Event {
         return array_merge(parent::read($opts), [
             'verb' => [
                 'id' => 'https://brindlewaye.com/xAPITerms/verbs/loggedin/',
-                'display' => [
-                    'en-GB' => 'logged in to',
-                    'en-US' => 'logged in to',
-                ],
+                'display' => $this->readVerbDisplay($opts),
             ],
             'object' => $this->readApp($opts),
         ]);

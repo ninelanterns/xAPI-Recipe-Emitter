@@ -3,6 +3,7 @@ use \XREmitter\Repository as Repository;
 use \stdClass as PhpObj;
 
 abstract class Event extends PhpObj {
+    protected static $verb_display;
     protected $repo;
 
     /**
@@ -58,12 +59,10 @@ abstract class Event extends PhpObj {
             'definition' => [
                 'type' => $opts[$key.'_type'],
                 'name' => [
-                    'en-GB' => $opts[$key.'_name'],
-                    'en-US' => $opts[$key.'_name'],
+                    $opts['context_lang'] => $opts[$key.'_name'],
                 ],
                 'description' => [
-                    'en-GB' => $opts[$key.'_description'],
-                    'en-US' => $opts[$key.'_description'],
+                    $opts['context_lang'] => $opts[$key.'_description'],
                 ],
             ],
         ];
@@ -83,5 +82,11 @@ abstract class Event extends PhpObj {
     
     protected function readDiscussion($opts) {
         return $this->readActivity($opts, 'discussion');
+    }
+
+    protected function readVerbDisplay($opts) {
+        $lang = $opts['context_lang'];
+        $lang = isset(static::$verb_display[$lang]) ? $lang : array_keys(static::$verb_display)[0];
+        return [$lang => static::$verb_display[$lang]];
     }
 }

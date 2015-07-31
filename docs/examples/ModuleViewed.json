@@ -11,8 +11,7 @@
     "verb": {
         "id": "http://id.tincanapi.com/verb/viewed",
         "display": {
-            "en-GB": "viewed",
-            "en-US": "viewed"
+            "en": "viewed"
         }
     },
     "context": {
@@ -24,12 +23,10 @@
                     "definition": {
                         "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
-                            "en-GB": "My Test Site",
-                            "en-US": "My Test Site"
+                            "en": "My Test Site"
                         },
                         "description": {
-                            "en-GB": "<p>A test site.</p>",
-                            "en-US": "<p>A test site.</p>"
+                            "en": "<p>A test site.</p>"
                         }
                     }
                 },
@@ -39,12 +36,10 @@
                     "definition": {
                         "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
-                            "en-GB": "My Test Course 1",
-                            "en-US": "My Test Course 1"
+                            "en": "My Test Course 1"
                         },
                         "description": {
-                            "en-GB": "<p>A test course.</p>",
-                            "en-US": "<p>A test course.</p>"
+                            "en": "<p>A test course.</p>"
                         }
                     }
                 }
@@ -80,12 +75,10 @@
         "definition": {
             "type": "http://lrs.learninglocker.net/define/type/moodle/page",
             "name": {
-                "en-GB": "My Test Page",
-                "en-US": "My Test Page"
+                "en": "My Test Page"
             },
             "description": {
-                "en-GB": "<p>sdfsdfdfsdf</p>",
-                "en-US": "<p>sdfsdfdfsdf</p>"
+                "en": "<p>sdfsdfdfsdf</p>"
             }
         }
     },

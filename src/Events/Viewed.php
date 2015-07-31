@@ -1,6 +1,10 @@
 <?php namespace XREmitter\Events;
 
 abstract class Viewed extends Event {
+    protected static $verb_display = [
+        'en' => 'viewed'
+    ];
+
     /**
      * Reads data for an event.
      * @param [String => Mixed] $opts
@@ -11,10 +15,7 @@ abstract class Viewed extends Event {
         return array_merge(parent::read($opts), [
             'verb' => [
                 'id' => 'http://id.tincanapi.com/verb/viewed',
-                'display' => [
-                    'en-GB' => 'viewed',
-                    'en-US' => 'viewed',
-                ],
+                'display' => $this->readVerbDisplay($opts),
             ],
         ]);
     }
