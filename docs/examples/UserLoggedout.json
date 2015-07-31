@@ -11,8 +11,7 @@
     "verb": {
         "id": "https://brindlewaye.com/xAPITerms/verbs/loggedout/",
         "display": {
-            "en-GB": "logged out of",
-            "en-US": "logged out of"
+            "en": "logged out of"
         }
     },
     "context": {
@@ -43,12 +42,10 @@
                     "definition": {
                         "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
-                            "en-GB": "My Test Site",
-                            "en-US": "My Test Site"
+                            "en": "My Test Site"
                         },
                         "description": {
-                            "en-GB": "<p>A test site.</p>",
-                            "en-US": "<p>A test site.</p>"
+                            "en": "<p>A test site.</p>"
                         }
                     }
                 }
@@ -62,12 +59,10 @@
         "definition": {
             "type": "http://lrs.learninglocker.net/define/type/moodle/course",
             "name": {
-                "en-GB": "A Moodle course",
-                "en-US": "A Moodle course"
+                "en": "A Moodle course"
             },
             "description": {
-                "en-GB": "A Moodle course",
-                "en-US": "A Moodle course"
+                "en": "A Moodle course"
             }
         }
     },

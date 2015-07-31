@@ -11,8 +11,7 @@
     "verb": {
         "id": "http://activitystrea.ms/schema/1.0/start",
         "display": {
-            "en-GB": "started",
-            "en-US": "started"
+            "en": "started"
         }
     },
     "context": {
@@ -24,12 +23,10 @@
                     "definition": {
                         "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
-                            "en-GB": "My Test Site",
-                            "en-US": "My Test Site"
+                            "en": "My Test Site"
                         },
                         "description": {
-                            "en-GB": "<p>A test site.</p>",
-                            "en-US": "<p>A test site.</p>"
+                            "en": "<p>A test site.</p>"
                         }
                     }
                 },
@@ -39,12 +36,10 @@
                     "definition": {
                         "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
-                            "en-GB": "My Test Course 1",
-                            "en-US": "My Test Course 1"
+                            "en": "My Test Course 1"
                         },
                         "description": {
-                            "en-GB": "<p>A test course.</p>",
-                            "en-US": "<p>A test course.</p>"
+                            "en": "<p>A test course.</p>"
                         }
                     }
                 },
@@ -54,12 +49,10 @@
                     "definition": {
                         "type": "http://lrs.learninglocker.net/define/type/moodle/quiz",
                         "name": {
-                            "en-GB": "My Test Quiz 1",
-                            "en-US": "My Test Quiz 1"
+                            "en": "My Test Quiz 1"
                         },
                         "description": {
-                            "en-GB": "A module",
-                            "en-US": "A module"
+                            "en": "A module"
                         }
                     }
                 }
@@ -96,8 +89,7 @@
         "definition": {
             "type": "http://lrs.learninglocker.net/define/type/moodle/attempt",
             "name": {
-                "en-GB": "Attempt 50",
-                "en-US": "Attempt 50"
+                "en": "Attempt 50"
             }
         }
     },

@@ -11,8 +11,7 @@
     "verb": {
         "id": "http://www.tincanapi.co.uk/verbs/evaluated",
         "display": {
-            "en-GB": "evaluated",
-            "en-US": "evaluated"
+            "en": "evaluated"
         }
     },
     "result": {
@@ -30,12 +29,10 @@
                     "definition": {
                         "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
-                            "en-GB": "My Test Site",
-                            "en-US": "My Test Site"
+                            "en": "My Test Site"
                         },
                         "description": {
-                            "en-GB": "<p>A test site.</p>",
-                            "en-US": "<p>A test site.</p>"
+                            "en": "<p>A test site.</p>"
                         }
                     }
                 },
@@ -45,12 +42,10 @@
                     "definition": {
                         "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
-                            "en-GB": "My Test Course 1",
-                            "en-US": "My Test Course 1"
+                            "en": "My Test Course 1"
                         },
                         "description": {
-                            "en-GB": "<p>A test course.</p>",
-                            "en-US": "<p>A test course.</p>"
+                            "en": "<p>A test course.</p>"
                         }
                     }
                 },
@@ -60,12 +55,10 @@
                     "definition": {
                         "type": "http://lrs.learninglocker.net/define/type/moodle/assign",
                         "name": {
-                            "en-GB": "My Test Assignment 3",
-                            "en-US": "My Test Assignment 3"
+                            "en": "My Test Assignment 3"
                         },
                         "description": {
-                            "en-GB": "A module",
-                            "en-US": "A module"
+                            "en": "A module"
                         }
                     }
                 }
