@@ -29,6 +29,7 @@ abstract class EventTest extends PhpUnitTestCase {
         return array_merge(
             $this->constructUser('user'),
             $this->constructLog(),
+            $this->contructObject('app'),
             ['recipe' => static::$recipe_name]
         );
     }
@@ -90,6 +91,7 @@ abstract class EventTest extends PhpUnitTestCase {
 
     protected function assertOutput($input, $output) {
         $this->assertUser($input, $output['actor'], 'user');
+        $this->assertObject('app', $input, $output['context']['contextActivities']['grouping'][0]);
         $this->assertLog($input, $output);
     }
 
