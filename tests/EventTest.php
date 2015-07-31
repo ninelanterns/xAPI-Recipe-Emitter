@@ -116,23 +116,19 @@ abstract class EventTest extends PhpUnitTestCase {
 
     protected function assertObject($type, $input, $output) {
         $this->assertEquals($input[$type.'_url'], $output['id']);
-        $this->assertEquals($input[$type.'_name'], $output['definition']['name']['en-GB']);
-        $this->assertEquals($input[$type.'_name'], $output['definition']['name']['en-US']);
+        $this->assertEquals($input[$type.'_name'], $output['definition']['name'][$input['context_lang']]);
         $this->assertEquals($input[$type.'_type'], $output['definition']['type']);
-        $this->assertEquals($input[$type.'_description'], $output['definition']['description']['en-GB']);
-        $this->assertEquals($input[$type.'_description'], $output['definition']['description']['en-US']);
+        $this->assertEquals($input[$type.'_description'], $output['definition']['description'][$input['context_lang']]);
     }
 
     protected function assertVerb($verb_id, $verb_name, $output) {
         $this->assertEquals($verb_id, $output['id']);
-        $this->assertEquals($verb_name, $output['display']['en-GB']);
-        $this->assertEquals($verb_name, $output['display']['en-US']);
+        $this->assertEquals($verb_name, $output['display']['en']);
     }
 
     protected function assertAttempt($input, $output) {
         $this->assertEquals($input['attempt_url'], $output['id']);
-        $this->assertEquals($input['attempt_name'], $output['definition']['name']['en-GB']);
-        $this->assertEquals($input['attempt_name'], $output['definition']['name']['en-US']);
+        $this->assertEquals($input['attempt_name'], $output['definition']['name'][$input['context_lang']]);
         $this->assertEquals($input['attempt_type'], $output['definition']['type']);
         $this->assertArrayHasKey($input['attempt_ext_key'], $output['definition']['extensions']);
         $this->assertEquals($input['attempt_ext'], $output['definition']['extensions'][$input['attempt_ext_key']]);
