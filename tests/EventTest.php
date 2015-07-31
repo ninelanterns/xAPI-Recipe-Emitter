@@ -3,6 +3,7 @@ use \PHPUnit_Framework_TestCase as PhpUnitTestCase;
 use \XREmitter\Events\Event as Event;
 
 abstract class EventTest extends PhpUnitTestCase {
+    protected static $xapi_type = 'http://lrs.learninglocker.net/define/type/moodle/';
     protected static $recipe_name;
     protected $repo;
 
@@ -59,6 +60,7 @@ abstract class EventTest extends PhpUnitTestCase {
             $type.'_url' => 'http://www.example.com/'.$type.'_url',
             $type.'_name' => 'Test '.$type.'_name',
             $type.'_description' => 'Test '.$type.'_description',
+            $type.'_type' => static::$xapi_type.$type,
             $type.'_ext' => [
                 'test_'.$type.'_ext_key' => 'test_'.$type.'_ext_value',
             ],
@@ -69,6 +71,7 @@ abstract class EventTest extends PhpUnitTestCase {
     protected function constructAttempt() {
         return [
             'attempt_url' => 'http://www.example.com/attempt_url',
+            'attempt_type' => static::$xapi_type.'attempt',
             'attempt_ext' => [
                 'test_attempt_ext_key' => 'test_attempt_ext_value',
             ],
@@ -82,6 +85,7 @@ abstract class EventTest extends PhpUnitTestCase {
             'discussion_url' => 'http://www.example.com/discussion_url',
             'discussion_name' => 'A Forum Post',
             'discussion_description' => 'A description of the forum',
+            'discussion_type' => static::$xapi_type.'discussion',
             'discussion_ext_key' => 'http://www.example.com/attempt_ext_key',
             'discussion_ext' => [
                 'discussion_ext_key' => 'discussion_ext_value',
@@ -114,6 +118,7 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input[$type.'_url'], $output['id']);
         $this->assertEquals($input[$type.'_name'], $output['definition']['name']['en-GB']);
         $this->assertEquals($input[$type.'_name'], $output['definition']['name']['en-US']);
+        $this->assertEquals($input[$type.'_type'], $output['definition']['type']);
         $this->assertEquals($input[$type.'_description'], $output['definition']['description']['en-GB']);
         $this->assertEquals($input[$type.'_description'], $output['definition']['description']['en-US']);
     }
@@ -128,6 +133,7 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input['attempt_url'], $output['id']);
         $this->assertEquals($input['attempt_name'], $output['definition']['name']['en-GB']);
         $this->assertEquals($input['attempt_name'], $output['definition']['name']['en-US']);
+        $this->assertEquals($input['attempt_type'], $output['definition']['type']);
         $this->assertArrayHasKey($input['attempt_ext_key'], $output['definition']['extensions']);
         $this->assertEquals($input['attempt_ext'], $output['definition']['extensions'][$input['attempt_ext_key']]);
     }

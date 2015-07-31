@@ -13,7 +13,7 @@ class ModuleViewed extends Viewed {
             'context' => [
                 'contextActivities' => [
                     'grouping' => [
-                        $this->readCourse($opts, 'course', 'http://adlnet.gov/expapi/activities/course'),
+                        $this->readCourse($opts),
                     ],
                 ],
             ],
