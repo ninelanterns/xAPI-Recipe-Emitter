@@ -35,6 +35,25 @@
                 "ip": "127.0.0.1",
                 "object": "course"
             }
+        },
+        "contextActivities": {
+            "grouping": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://localhost/moodle/course.php?id=1",
+                    "definition": {
+                        "type": "http://activitystrea.ms/schema/1.0/application",
+                        "name": {
+                            "en-GB": "My Test Site",
+                            "en-US": "My Test Site"
+                        },
+                        "description": {
+                            "en-GB": "<p>A test site.</p>",
+                            "en-US": "<p>A test site.</p>"
+                        }
+                    }
+                }
+            ]
         }
     },
     "timestamp": "2015-06-17T12:10:07+01:00",
