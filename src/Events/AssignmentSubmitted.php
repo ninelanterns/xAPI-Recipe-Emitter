@@ -1,6 +1,10 @@
 <?php namespace XREmitter\Events;
 
 class AssignmentSubmitted extends Event {
+    protected static $verb_display = [
+        'en' => 'completed'
+    ];
+
     /**
      * Reads data for an event.
      * @param [String => Mixed] $opts
@@ -11,10 +15,7 @@ class AssignmentSubmitted extends Event {
         return array_merge_recursive(parent::read($opts), [
             'verb' => [
                 'id' => 'http://adlnet.gov/expapi/verbs/completed',
-                'display' => [
-                    'en-GB' => 'completed',
-                    'en-US' => 'completed',
-                ],
+                'display' => $this->readVerbDisplay($opts),
             ],
             'object' => $this->readModule($opts),
             'context' => [

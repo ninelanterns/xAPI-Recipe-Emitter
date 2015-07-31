@@ -1,6 +1,10 @@
 <?php namespace XREmitter\Events;
 
 class AssignmentGraded extends Event {
+    protected static $verb_display = [
+        'en' => 'evaluated'
+    ];
+
     /**
      * Reads data for an event.
      * @param [String => Mixed] $opts
@@ -11,10 +15,7 @@ class AssignmentGraded extends Event {
         return array_merge_recursive(parent::read($opts), [
             'verb' => [
                 'id' => 'http://www.tincanapi.co.uk/verbs/evaluated',
-                'display' => [
-                    'en-GB' => 'evaluated',
-                    'en-US' => 'evaluated',
-                ],
+                'display' => $this->readVerbDisplay($opts),
             ],
             'result' => [
                 'score' => [

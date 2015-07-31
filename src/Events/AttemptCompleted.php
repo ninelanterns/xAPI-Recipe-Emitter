@@ -1,6 +1,10 @@
 <?php namespace XREmitter\Events;
 
 class AttemptCompleted extends AttemptStarted {
+    protected static $verb_display = [
+        'en' => 'completed'
+    ];
+
     /**
      * Reads data for an event.
      * @param [String => Mixed] $opts
@@ -11,10 +15,7 @@ class AttemptCompleted extends AttemptStarted {
         return array_merge(parent::read($opts), [
             'verb' => [
                 'id' => 'http://adlnet.gov/expapi/verbs/completed',
-                'display' => [
-                    'en-GB' => 'completed',
-                    'en-US' => 'completed',
-                ],
+                'display' => $this->readVerbDisplay($opts),
             ],
             'result' => [
                 'score' => [
