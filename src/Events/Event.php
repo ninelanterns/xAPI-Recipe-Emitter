@@ -29,8 +29,9 @@ abstract class Event extends PhpObj {
      * @return [String => Mixed]
      */
     public function read(array $opts) {
+        $version = str_replace("\r\n", "", file_get_contents(__DIR__.'/../../VERSION'));
         $version_key = 'https://github.com/LearningLocker/xAPI-Recipe-Emitter';
-        $opts['context_info']->{$version_key} = file_get_contents(__DIR__.'/../../VERSION');
+        $opts['context_info']->{$version_key} = $version;
         return [
             'actor' => [
                 'name' => $opts['user_name'],
