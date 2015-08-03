@@ -47,6 +47,11 @@ abstract class EventTest extends PhpUnitTestCase {
         return [
             'context_lang' => 'en',
             'context_platform' => 'Moodle',
+            'context_info' => (object) [
+                'https://moodle.org/' => '1.0.0',
+                'https://github.com/LearningLocker/Moodle-Log-Expander' => '1.0.0',
+                'https://github.com/LearningLocker/Moodle-xAPI-Translator' => '1.0.0',
+            ],
             'context_ext' => [
                 'test_context_ext_key' => 'test_context_ext_value',
             ],
@@ -97,6 +102,29 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertUser($input, $output['actor'], 'user');
         $this->assertObject('app', $input, $output['context']['contextActivities']['grouping'][0]);
         $this->assertLog($input, $output);
+        $this->assertInfo(
+            $input['context_info'],
+            $output['context']['extensions']['http://lrs.learninglocker.net/define/extensions/info']
+        );
+    }
+
+    protected function assertInfo($input, $output) {
+        $this->assertEquals(
+            $input->{'https://moodle.org/'},
+            $output->{'https://moodle.org/'}
+        );
+        $this->assertEquals(
+            $input->{'https://github.com/LearningLocker/Moodle-Log-Expander'},
+            $output->{'https://github.com/LearningLocker/Moodle-Log-Expander'}
+        );
+        $this->assertEquals(
+            $input->{'https://github.com/LearningLocker/Moodle-xAPI-Translator'},
+            $output->{'https://github.com/LearningLocker/Moodle-xAPI-Translator'}
+        );
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../VERSION'),
+            $output->{'https://github.com/LearningLocker/xAPI-Recipe-Emitter'}
+        );
     }
 
     protected function assertUser($input, $output, $type) {

@@ -29,6 +29,8 @@ abstract class Event extends PhpObj {
      * @return [String => Mixed]
      */
     public function read(array $opts) {
+        $version_key = 'https://github.com/LearningLocker/xAPI-Recipe-Emitter';
+        $opts['context_info']->{$version_key} = file_get_contents(__DIR__.'/../../VERSION');
         return [
             'actor' => [
                 'name' => $opts['user_name'],
@@ -42,6 +44,7 @@ abstract class Event extends PhpObj {
                 'language' => $opts['context_lang'],
                 'extensions' => [
                     $opts['context_ext_key'] => $opts['context_ext'],
+                    'http://lrs.learninglocker.net/define/extensions/info' => $opts['context_info'],
                 ],
                 'contextActivities' => [
                     'grouping' => [

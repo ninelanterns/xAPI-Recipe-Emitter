@@ -65,6 +65,12 @@
                 "origin": "web",
                 "ip": "127.0.0.1",
                 "object": "course_module"
+            },
+            "http://lrs.learninglocker.net/define/extensions/info": {
+                "https://moodle.org/": "1.0.0",
+                "https://github.com/LearningLocker/Moodle-Log-Expander": "1.0.0",
+                "https://github.com/LearningLocker/Moodle-xAPI-Translator": "1.0.0",
+                "https://github.com/LearningLocker/xAPI-Recipe-Emitter": "1.0.0"
             }
         }
     },
