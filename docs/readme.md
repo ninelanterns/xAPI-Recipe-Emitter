@@ -20,6 +20,7 @@ assignment_graded | [AssignmentGraded](../src/Events/AssignmentGraded.php) | [As
 assignment_submitted | [AssignmentSubmitted](../src/Events/AssignmentSubmitted.php) | [AssignmentSubmittedTest](../tests/AssignmentSubmittedTest.php) | [AssignmentSubmitted](examples/AssignmentSubmitted.json)
 discussion_viewed | [DiscussionViewed](../src/Events/DiscussionViewed.php) | [DiscussionViewedTest](../tests/DiscussionViewedTest.php) | [DiscussionViewed](examples/DiscussionViewed.json)
 user_registered | [UserRegistered](../src/Events/UserRegistered.php) | [UserRegisteredTest](../tests/UserRegisteredTest.php) | [UserRegistered](examples/UserRegistered.json)
+enrolment_created | [EnrolmentCreated](../src/Events/EnrolmentCreated.php) | [EnrolmentCreatedTest](../tests/EnrolmentCreatedTest.php) | [EnrolmentCreated](examples/EnrolmentCreated.json)
 
 ## Adding Events
 To add an event create a new file in the "src/Events/" directory. You can then use  [ModuleViewed](../src/Events/ModuleViewed.php) as an example of what you're new file should look like. You will also need to change the [src/Controller.php file](../src/Controller.php) to map the recipe name to your new recipe class (event). Once you're happy with what you've done you'll need to create a pull request so that everyone else can use your new recipe class.
