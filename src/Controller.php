@@ -13,6 +13,7 @@ class Controller extends PhpObj {
         'user_loggedout' => 'UserLoggedout',
         'assignment_graded' => 'AssignmentGraded',
         'assignment_submitted' => 'AssignmentSubmitted',
+        'enrolment_created' => 'EnrolmentCreated',
     ];
 
     /**
