@@ -12,12 +12,15 @@ class EnrolmentCreated extends Event {
      * @override Event
      */
     public function read(array $opts) {
-        return array_merge(parent::read($opts), [
+        return array_merge_recursive(parent::read($opts), [
             'verb' => [
                 'id' => 'http://www.tincanapi.co.uk/verbs/enrolled_onto_learning_plan',
                 'display' => $this->readVerbDisplay($opts),
             ],
             'object' => $this->readCourse($opts),
+            'context' => [
+                'instructor' => $this->readUser($opts, 'instructor'),
+            ],
         ]);
     }
 }
