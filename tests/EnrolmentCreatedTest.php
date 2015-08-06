@@ -15,6 +15,7 @@ class EnrolmentCreatedTest extends EventTest {
     protected function constructInput() {
         return array_merge(
             parent::constructInput(),
+            $this->constructUser('instructor'),
             $this->contructObject('course')
         );
     }
@@ -23,5 +24,6 @@ class EnrolmentCreatedTest extends EventTest {
         parent::assertOutput($input, $output);
         $this->assertVerb('http://www.tincanapi.co.uk/verbs/enrolled_onto_learning_plan', 'enrolled onto', $output['verb']);
         $this->assertObject('course', $input, $output['object']);
+        $this->assertUser($input, $output['context']['instructor'], 'instructor');
     }
 }

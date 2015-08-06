@@ -16,6 +16,14 @@
     },
     "context": {
         "platform": "Moodle",
+        "instructor": {
+            "objectType": "Agent",
+            "name": "ryansmith",
+            "account": {
+                "name": "2",
+                "homePage": "http://localhost/moodle"
+            }
+        },
         "extensions": {
             "http://lrs.learninglocker.net/define/extensions/moodle_logstore_standard_log": {
                 "eventname": "\\core\\event\\user_enrolment_created",

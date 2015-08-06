@@ -33,13 +33,7 @@ abstract class Event extends PhpObj {
         $version_key = 'https://github.com/LearningLocker/xAPI-Recipe-Emitter';
         $opts['context_info']->{$version_key} = $version;
         return [
-            'actor' => [
-                'name' => $opts['user_name'],
-                'account' => [
-                    'homePage' => $opts['user_url'],
-                    'name' => $opts['user_id'],
-                ],
-            ],
+            'actor' => $this->readUser($opts, 'user'),
             'context' => [
                 'platform' => $opts['context_platform'],
                 'language' => $opts['context_lang'],
@@ -54,6 +48,16 @@ abstract class Event extends PhpObj {
                 ],
             ],
             'timestamp' => $opts['time'],
+        ];
+    }
+
+    protected function readUser(array $opts, $key) {
+        return [
+            'name' => $opts[$key.'_name'],
+            'account' => [
+                'homePage' => $opts[$key.'_url'],
+                'name' => $opts[$key.'_id'],
+            ],
         ];
     }
 
