@@ -1,6 +1,7 @@
 <?php namespace Tests;
 use \PHPUnit_Framework_TestCase as PhpUnitTestCase;
 use \XREmitter\Events\Event as Event;
+use \Locker\XApi\Statement as Statement;
 
 abstract class EventTest extends PhpUnitTestCase {
     protected static $xapi_type = 'http://lrs.learninglocker.net/define/type/moodle/';
@@ -37,7 +38,7 @@ abstract class EventTest extends PhpUnitTestCase {
 
     protected function constructUser($type) {
         return [
-            $type.'_id' => 1,
+            $type.'_id' => '1',
             $type.'_url' => 'http://www.example.com/'.$type.'_url',
             $type.'_name' => 'Test '.$type.'_name',
         ];
@@ -106,6 +107,15 @@ abstract class EventTest extends PhpUnitTestCase {
             $input['context_info'],
             $output['context']['extensions']['http://lrs.learninglocker.net/define/extensions/info']
         );
+        $this->assertValidXapiStatement($output);
+    }
+
+    protected function assertValidXapiStatement($output) {
+        $errors = Statement::createFromJson(json_encode($output))->validate();
+        $errors_json = json_encode(array_map(function ($error) {
+            return (string) $error;
+        }, $errors));
+        $this->assertEmpty($errors, $errors_json);
     }
 
     protected function assertInfo($input, $output) {
