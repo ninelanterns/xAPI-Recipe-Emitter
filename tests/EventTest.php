@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \PHPUnit_Framework_TestCase as PhpUnitTestCase;
 use \XREmitter\Events\Event as Event;
 use \Locker\XApi\Statement as Statement;

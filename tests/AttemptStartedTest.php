@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Events\AttemptStarted as Event;
 
 class AttemptStartedTest extends EventTest {

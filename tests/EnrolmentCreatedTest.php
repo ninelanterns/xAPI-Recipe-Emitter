@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Events\EnrolmentCreated as Event;
 
 class EnrolmentCreatedTest extends EventTest {

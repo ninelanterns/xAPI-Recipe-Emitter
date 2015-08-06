@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Events\AssignmentGraded as Event;
 
 class AssignmentGradedTest extends EventTest {

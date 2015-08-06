@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Events\ModuleViewed as Event;
 
 class ModuleViewedTest extends EventTest {

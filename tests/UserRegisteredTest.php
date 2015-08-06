@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Events\UserRegistered as Event;
 
 class UserRegisteredTest extends EventTest {
