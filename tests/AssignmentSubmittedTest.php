@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Events\AssignmentSubmitted as Event;
 
 class AssignmentSubmittedTest extends EventTest {

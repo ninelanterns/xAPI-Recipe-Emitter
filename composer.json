@@ -4,7 +4,7 @@
     "autoload": {
         "psr-4": {
           "XREmitter\\": "src/",
-          "Tests\\": "tests/"
+          "XREmitter\\Tests\\": "tests/"
         }
     },
     "require-dev": {

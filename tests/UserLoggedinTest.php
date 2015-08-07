@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Events\UserLoggedin as Event;
 
 class UserLoggedinTest extends EventTest {
