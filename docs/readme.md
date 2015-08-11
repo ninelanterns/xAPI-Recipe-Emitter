@@ -21,6 +21,7 @@ assignment_submitted | [AssignmentSubmitted](../src/Events/AssignmentSubmitted.p
 discussion_viewed | [DiscussionViewed](../src/Events/DiscussionViewed.php) | [DiscussionViewedTest](../tests/DiscussionViewedTest.php) | [DiscussionViewed](examples/DiscussionViewed.json)
 user_registered | [UserRegistered](../src/Events/UserRegistered.php) | [UserRegisteredTest](../tests/UserRegisteredTest.php) | [UserRegistered](examples/UserRegistered.json)
 enrolment_created | [EnrolmentCreated](../src/Events/EnrolmentCreated.php) | [EnrolmentCreatedTest](../tests/EnrolmentCreatedTest.php) | [EnrolmentCreated](examples/EnrolmentCreated.json)
+scorm_launched | [ScormLaunched](../src/Events/ScormLaunched.php) | [ScormLaunchedTest](../tests/ScormLaunchedTest.php) | [ScormLaunched](examples/ScormLaunched.json)
 
 ## Adding Events
 1. Create a new ".php" file in the "tests" directory.

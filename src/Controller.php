@@ -15,6 +15,7 @@ class Controller extends PhpObj {
         'assignment_submitted' => 'AssignmentSubmitted',
         'user_registered' => 'UserRegistered',
         'enrolment_created' => 'EnrolmentCreated',
+        'scorm_launched' => 'ScormLaunched',
     ];
 
     /**
