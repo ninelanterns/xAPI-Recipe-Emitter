@@ -32,9 +32,9 @@ class AttemptCompletedTest extends EventTest {
     protected function assertOutput($input, $output) {
         parent::assertOutput($input, $output);
         $this->assertVerb('http://adlnet.gov/expapi/verbs/completed', 'completed', $output['verb']);
-        $this->assertObject('module', $input, $output['context']['contextActivities']['grouping'][2]);
+        $this->assertAttempt($input, $output['context']['contextActivities']['grouping'][2]);
         $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][1]);
-        $this->assertAttempt($input, $output['object']);
+        $this->assertObject('module', $input, $output['object']);
         $this->assertEquals($input['attempt_result'], $output['result']['score']['raw']);
         $this->assertEquals($input['attempt_completed'], $output['result']['completion']);
         $this->assertEquals($input['attempt_duration'], $output['result']['duration']);
