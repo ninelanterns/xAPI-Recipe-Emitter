@@ -11,8 +11,7 @@
     "verb": {
         "id": "https://brindlewaye.com/xAPITerms/verbs/loggedin/",
         "display": {
-            "en-GB": "logged in to",
-            "en-US": "logged in to"
+            "en": "logged in to"
         }
     },
     "context": {
@@ -33,7 +32,30 @@
                 "origin": "web",
                 "ip": "127.0.0.1",
                 "object": "user"
+            },
+            "http://lrs.learninglocker.net/define/extensions/info": {
+                "https://moodle.org/": "1.0.0",
+                "https://github.com/LearningLocker/Moodle-Log-Expander": "1.0.0",
+                "https://github.com/LearningLocker/Moodle-xAPI-Translator": "1.0.0",
+                "https://github.com/LearningLocker/xAPI-Recipe-Emitter": "1.0.0"
             }
+        },
+        "contextActivities": {
+            "grouping": [
+                {
+                    "objectType": "Activity",
+                    "id": "http://localhost/moodle/course.php?id=1",
+                    "definition": {
+                        "type": "http://lrs.learninglocker.net/define/type/moodle/course",
+                        "name": {
+                            "en": "My Test Site"
+                        },
+                        "description": {
+                            "en": "<p>A test site.</p>"
+                        }
+                    }
+                }
+            ]
         }
     },
     "timestamp": "2015-06-17T16:03:24+01:00",
@@ -41,19 +63,12 @@
         "objectType": "Activity",
         "id": "http://localhost/moodle",
         "definition": {
-            "type": "http://activitystrea.ms/schema/1.0/application",
+            "type": "http://lrs.learninglocker.net/define/type/moodle/course",
             "name": {
-                "en-GB": "A Moodle course",
-                "en-US": "A Moodle course"
+                "en": "A Moodle course"
             },
             "description": {
-                "en-GB": "A Moodle course",
-                "en-US": "A Moodle course"
-            },
-            "extensions": {
-                "http://lrs.learninglocker.net/define/extensions/moodle_course": {
-                    "url": "http://localhost/moodle"
-                }
+                "en": "A Moodle course"
             }
         }
     },

@@ -13,6 +13,9 @@ class Controller extends PhpObj {
         'user_loggedout' => 'UserLoggedout',
         'assignment_graded' => 'AssignmentGraded',
         'assignment_submitted' => 'AssignmentSubmitted',
+        'user_registered' => 'UserRegistered',
+        'enrolment_created' => 'EnrolmentCreated',
+        'scorm_launched' => 'ScormLaunched',
     ];
 
     /**
@@ -33,6 +36,7 @@ class Controller extends PhpObj {
         if (isset(static::$routes[$route])) {
             $event = '\XREmitter\Events\\'.static::$routes[$route];
             $service = new $event($this->repo);
+            $opts['context_lang'] = $opts['context_lang'] ?: 'en';
             $statement = $service->read($opts);
             return $service->create($statement);
         } else {

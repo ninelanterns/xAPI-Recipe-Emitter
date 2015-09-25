@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Repository as EmitterRepository;
 
 class TestRepository extends EmitterRepository {

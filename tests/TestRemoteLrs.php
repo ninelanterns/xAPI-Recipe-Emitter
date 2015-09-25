@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \TinCan\RemoteLRS as TinCanRemoteLrs;
 
 class TestRemoteLrs extends TinCanRemoteLrs {

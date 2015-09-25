@@ -11,8 +11,7 @@
     "verb": {
         "id": "http://id.tincanapi.com/verb/viewed",
         "display": {
-            "en-GB": "viewed",
-            "en-US": "viewed"
+            "en": "viewed"
         }
     },
     "context": {
@@ -20,51 +19,27 @@
             "grouping": [
                 {
                     "objectType": "Activity",
-                    "id": "http://localhost/moodle/course.php?id=2",
+                    "id": "http://localhost/moodle/course.php?id=1",
                     "definition": {
-                        "type": "http://adlnet.gov/expapi/activities/course",
+                        "type": "http://lrs.learninglocker.net/define/type/moodle/course",
                         "name": {
-                            "en-GB": "My Test Course 1",
-                            "en-US": "My Test Course 1"
+                            "en": "My Test Site"
                         },
                         "description": {
-                            "en-GB": "<p>A test course.</p>",
-                            "en-US": "<p>A test course.</p>"
+                            "en": "<p>A test site.</p>"
+                        }
+                    }
+                },
+                {
+                    "objectType": "Activity",
+                    "id": "http://localhost/moodle/course.php?id=2",
+                    "definition": {
+                        "type": "http://lrs.learninglocker.net/define/type/moodle/course",
+                        "name": {
+                            "en": "My Test Course 1"
                         },
-                        "extensions": {
-                            "http://lrs.learninglocker.net/define/extensions/moodle_course": {
-                                "id": "2",
-                                "category": "1",
-                                "sortorder": "10002",
-                                "fullname": "My Test Course 1",
-                                "shortname": "MTC1",
-                                "idnumber": "MTC1",
-                                "summary": "<p>A test course.</p>",
-                                "summaryformat": "1",
-                                "format": "weeks",
-                                "showgrades": "1",
-                                "newsitems": "5",
-                                "startdate": "1433890800",
-                                "marker": "0",
-                                "maxbytes": "0",
-                                "legacyfiles": "0",
-                                "showreports": "0",
-                                "visible": "1",
-                                "visibleold": "1",
-                                "groupmode": "0",
-                                "groupmodeforce": "0",
-                                "defaultgroupingid": "0",
-                                "lang": "",
-                                "calendartype": "",
-                                "theme": "",
-                                "timecreated": "1433844784",
-                                "timemodified": "1433844784",
-                                "requested": "0",
-                                "enablecompletion": "0",
-                                "completionnotify": "0",
-                                "cacherev": "1434018611",
-                                "url": "http://localhost/moodle/course.php?id=2"
-                            }
+                        "description": {
+                            "en": "<p>A test course.</p>"
                         }
                     }
                 }
@@ -90,6 +65,12 @@
                 "origin": "web",
                 "ip": "127.0.0.1",
                 "object": "course_module"
+            },
+            "http://lrs.learninglocker.net/define/extensions/info": {
+                "https://moodle.org/": "1.0.0",
+                "https://github.com/LearningLocker/Moodle-Log-Expander": "1.0.0",
+                "https://github.com/LearningLocker/Moodle-xAPI-Translator": "1.0.0",
+                "https://github.com/LearningLocker/xAPI-Recipe-Emitter": "1.0.0"
             }
         }
     },
@@ -98,32 +79,12 @@
         "objectType": "Activity",
         "id": "http://localhost/moodle/mod/page/view.php?id=2",
         "definition": {
-            "type": "http://adlnet.gov/expapi/activities/module",
+            "type": "http://lrs.learninglocker.net/define/type/moodle/page",
             "name": {
-                "en-GB": "My Test Page",
-                "en-US": "My Test Page"
+                "en": "My Test Page"
             },
             "description": {
-                "en-GB": "<p>sdfsdfdfsdf</p>",
-                "en-US": "<p>sdfsdfdfsdf</p>"
-            },
-            "extensions": {
-                "http://lrs.learninglocker.net/define/extensions/moodle_module": {
-                    "id": "1",
-                    "course": "2",
-                    "name": "My Test Page",
-                    "intro": "<p>sdfsdfdfsdf</p>",
-                    "introformat": "1",
-                    "content": "This is a crazy awesome page.",
-                    "contentformat": "1",
-                    "legacyfiles": "0",
-                    "legacyfileslast": null,
-                    "display": "5",
-                    "displayoptions": "a:2:{s:12:\"printheading\";s:1:\"1\";s:10:\"printintro\";s:1:\"0\";}",
-                    "revision": "1",
-                    "timemodified": "1433859089",
-                    "url": "http://localhost/moodle/mod/page/view.php?id=2"
-                }
+                "en": "<p>sdfsdfdfsdf</p>"
             }
         }
     },

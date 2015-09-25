@@ -1,8 +1,8 @@
 <?php namespace XREmitter\Events;
 
-class AttemptCompleted extends AttemptStarted {
+class UserRegistered extends Event {
     protected static $verb_display = [
-        'en' => 'completed'
+        'en' => 'registered to'
     ];
 
     /**
@@ -14,16 +14,10 @@ class AttemptCompleted extends AttemptStarted {
     public function read(array $opts) {
         return array_merge(parent::read($opts), [
             'verb' => [
-                'id' => 'http://adlnet.gov/expapi/verbs/completed',
+                'id' => 'http://adlnet.gov/expapi/verbs/registered',
                 'display' => $this->readVerbDisplay($opts),
             ],
-            'result' => [
-                'score' => [
-                    'raw' => $opts['attempt_result'],
-                ],
-                'completion' => $opts['attempt_completed'],
-                'duration' => $opts['attempt_duration'],
-            ],
+            'object' => $this->readApp($opts),
         ]);
     }
 }

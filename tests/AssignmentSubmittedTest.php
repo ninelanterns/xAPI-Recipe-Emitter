@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Events\AssignmentSubmitted as Event;
 
 class AssignmentSubmittedTest extends EventTest {
@@ -24,6 +24,6 @@ class AssignmentSubmittedTest extends EventTest {
         parent::assertOutput($input, $output);
         $this->assertVerb('http://adlnet.gov/expapi/verbs/completed', 'completed', $output['verb']);
         $this->assertObject('module', $input, $output['object']);
-        $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][0]);
+        $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][1]);
     }
 }

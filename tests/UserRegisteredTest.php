@@ -1,8 +1,8 @@
 <?php namespace XREmitter\Tests;
-use \XREmitter\Events\CourseViewed as Event;
+use \XREmitter\Events\UserRegistered as Event;
 
-class CourseViewedTest extends EventTest {
-    protected static $recipe_name = 'course_viewed';
+class UserRegisteredTest extends EventTest {
+    protected static $recipe_name = 'user_registered';
 
     /**
      * Sets up the tests.
@@ -15,13 +15,13 @@ class CourseViewedTest extends EventTest {
     protected function constructInput() {
         return array_merge(
             parent::constructInput(),
-            $this->contructObject('course')
+            $this->contructObject('app')
         );
     }
 
     protected function assertOutput($input, $output) {
         parent::assertOutput($input, $output);
-        $this->assertVerb('http://id.tincanapi.com/verb/viewed', 'viewed', $output['verb']);
-        $this->assertObject('course', $input, $output['object']);
+        $this->assertVerb('http://adlnet.gov/expapi/verbs/registered', 'registered to', $output['verb']);
+        $this->assertObject('app', $input, $output['object']);
     }
 }

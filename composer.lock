@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3937888af80803adecf89a3947f8a07b",
+    "hash": "47b7c4cc0bdbae9e009e5ee40a96f4e2",
     "packages": [
         {
             "name": "rusticisoftware/tincan",
@@ -111,6 +111,39 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "learninglocker/statementfactory",
+            "version": "v0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LearningLocker/StatementFactory.git",
+                "reference": "b364e7f49329230ee9eef7a30536ca9637a42630"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LearningLocker/StatementFactory/zipball/b364e7f49329230ee9eef7a30536ca9637a42630",
+                "reference": "b364e7f49329230ee9eef7a30536ca9637a42630",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Locker\\XApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL v3"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Smith",
+                    "email": "0ryansmith1994@gmail.com"
+                }
+            ],
+            "description": "Learning Locker's classes for xAPI.",
+            "time": "2015-05-13 14:33:50"
         },
         {
             "name": "phpdocumentor/reflection-docblock",

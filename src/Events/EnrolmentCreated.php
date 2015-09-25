@@ -1,8 +1,8 @@
 <?php namespace XREmitter\Events;
 
-class UserLoggedin extends Event {
+class EnrolmentCreated extends Event {
     protected static $verb_display = [
-        'en' => 'logged in to'
+        'en' => 'enrolled onto'
     ];
 
     /**
@@ -12,12 +12,15 @@ class UserLoggedin extends Event {
      * @override Event
      */
     public function read(array $opts) {
-        return array_merge(parent::read($opts), [
+        return array_merge_recursive(parent::read($opts), [
             'verb' => [
-                'id' => 'https://brindlewaye.com/xAPITerms/verbs/loggedin/',
+                'id' => 'http://www.tincanapi.co.uk/verbs/enrolled_onto_learning_plan',
                 'display' => $this->readVerbDisplay($opts),
             ],
-            'object' => $this->readApp($opts),
+            'object' => $this->readCourse($opts),
+            'context' => [
+                'instructor' => $this->readUser($opts, 'instructor'),
+            ],
         ]);
     }
 }

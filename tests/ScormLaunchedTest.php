@@ -1,8 +1,8 @@
 <?php namespace XREmitter\Tests;
-use \XREmitter\Events\AttemptStarted as Event;
+use \XREmitter\Events\ScormLaunched as Event;
 
-class AttemptStartedTest extends EventTest {
-    protected static $recipe_name = 'attempt_started';
+class ScormLaunchedTest extends EventTest {
+    protected static $recipe_name = 'scorm_launched';
 
     /**
      * Sets up the tests.
@@ -16,16 +16,14 @@ class AttemptStartedTest extends EventTest {
         return array_merge(
             parent::constructInput(),
             $this->contructObject('course'),
-            $this->contructObject('module'),
-            $this->constructAttempt()
+            $this->contructObject('module')
         );
     }
 
     protected function assertOutput($input, $output) {
         parent::assertOutput($input, $output);
-        $this->assertVerb('http://activitystrea.ms/schema/1.0/start', 'started', $output['verb']);
-        $this->assertObject('module', $input, $output['context']['contextActivities']['grouping'][2]);
+        $this->assertVerb('http://adlnet.gov/expapi/verbs/launched', 'launched', $output['verb']);
+        $this->assertObject('module', $input, $output['object']);
         $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][1]);
-        $this->assertAttempt($input, $output['object']);
     }
 }

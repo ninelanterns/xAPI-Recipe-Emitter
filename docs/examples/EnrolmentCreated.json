@@ -4,34 +4,48 @@
         "objectType": "Agent",
         "name": "ryansmith",
         "account": {
-            "name": "3",
+            "name": "2",
             "homePage": "http://localhost/moodle"
         }
     },
     "verb": {
-        "id": "https://brindlewaye.com/xAPITerms/verbs/loggedout/",
+        "id": "http://www.tincanapi.co.uk/verbs/enrolled_onto_learning_plan",
         "display": {
-            "en": "logged out of"
+            "en": "enrolled onto"
         }
     },
     "context": {
         "platform": "Moodle",
+        "instructor": {
+            "objectType": "Agent",
+            "name": "ryansmith",
+            "account": {
+                "name": "2",
+                "homePage": "http://localhost/moodle"
+            }
+        },
         "extensions": {
             "http://lrs.learninglocker.net/define/extensions/moodle_logstore_standard_log": {
-                "eventname": "\\core\\event\\user_loggedout",
+                "eventname": "\\core\\event\\user_enrolment_created",
                 "component": "core",
-                "action": "loggedout",
-                "objecttable": "user",
-                "objectid": "3",
-                "crud": "r",
-                "contextid": 1,
-                "contextlevel": 10,
-                "userid": "3",
-                "other": "a:1:{s:9:\"sessionid\";s:26:\"vq09dq0agvsqcq2vb0gd5abrn3\";}",
-                "timecreated": 1434553362,
+                "action": "created",
+                "target": "user_enrolments",
+                "objecttable": "user_enrolments",
+                "objectid": 1,
+                "crud": "c",
+                "edulevel": 2,
+                "contextid": 24,
+                "contextlevel": 50,
+                "contextinstanceid": "2",
+                "userid": "2",
+                "courseid": "2",
+                "relateduserid": null,
+                "anonymous": 0,
+                "other": "N;",
+                "timecreated": 1434624675,
                 "origin": "web",
                 "ip": "127.0.0.1",
-                "object": "user"
+                "realuserid": null
             },
             "http://lrs.learninglocker.net/define/extensions/info": {
                 "https://moodle.org/": "1.0.0",
@@ -58,17 +72,17 @@
             ]
         }
     },
-    "timestamp": "2015-06-17T16:02:42+01:00",
+    "timestamp": "2015-06-17T12:10:07+01:00",
     "object": {
         "objectType": "Activity",
-        "id": "http://localhost/moodle",
+        "id": "http://localhost/moodle/course.php?id=2",
         "definition": {
             "type": "http://lrs.learninglocker.net/define/type/moodle/course",
             "name": {
-                "en": "A Moodle course"
+                "en": "My Test Course 1"
             },
             "description": {
-                "en": "A Moodle course"
+                "en": "<p>A test course.</p>"
             }
         }
     },
@@ -77,6 +91,6 @@
         "name": "New Client",
         "mbox": "mailto:hello@learninglocker.net"
     },
-    "stored": "2015-06-17T15:02:43.231200+00:00",
-    "id": "de773102-b8bc-4a14-8454-7d426636a6fa"
+    "stored": "2015-06-17T11:10:07.938000+00:00",
+    "id": "89cd2edf-e90e-436e-9976-3afbf844bf70"
 }

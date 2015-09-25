@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace XREmitter\Tests;
 use \XREmitter\Events\UserLoggedout as Event;
 
 class UserLoggedoutTest extends EventTest {

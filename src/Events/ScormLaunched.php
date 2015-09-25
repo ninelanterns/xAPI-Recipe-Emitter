@@ -1,6 +1,10 @@
 <?php namespace XREmitter\Events;
 
-class DiscussionViewed extends Viewed {
+class ScormLaunched extends Event {
+    protected static $verb_display = [
+        'en' => 'launched'
+    ];
+
     /**
      * Reads data for an event.
      * @param [String => Mixed] $opts
@@ -9,12 +13,15 @@ class DiscussionViewed extends Viewed {
      */
     public function read(array $opts) {
         return array_merge_recursive(parent::read($opts), [
-            'object' => $this->readDiscussion($opts, 'discussion', 'http://id.tincanapi.com/activitytype/discussion'),
+            'verb' => [
+                'id' => 'http://adlnet.gov/expapi/verbs/launched',
+                'display' => $this->readVerbDisplay($opts),
+            ],
+            'object' => $this->readModule($opts),
             'context' => [
                 'contextActivities' => [
                     'grouping' => [
-                        $this->readCourse($opts, 'course', 'http://adlnet.gov/expapi/activities/course'),
-                        $this->readModule($opts),
+                        $this->readCourse($opts),
                     ],
                 ],
             ],
