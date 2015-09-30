@@ -24,6 +24,9 @@ class AttemptCompleted extends Event {
                 'completion' => $opts['attempt_completed'],
                 'duration' => $opts['attempt_duration'],
             ],
+            'object' => [
+                $this->readModule($opts),
+            ],
             'context' => [
                 'contextActivities' => [
                     'grouping' => [
@@ -40,9 +43,6 @@ class AttemptCompleted extends Event {
                         ],
                     ],
                 ],
-            ],
-            'object' => [
-                $this->readModule($opts),
             ],
         ]);
     }
