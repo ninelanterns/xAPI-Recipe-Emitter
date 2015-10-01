@@ -25,7 +25,16 @@ class AttemptCompleted extends Event {
                 'duration' => $opts['attempt_duration'],
             ],
             'object' => [
-                $this->readModule($opts),
+                'id' => $opts['module_url'],
+                'definition' => [
+                    'type' => $opts['module_type'],
+                    'name' => [
+                        $opts['context_lang'] => $opts['module_name'],
+                    ],
+                    'description' => [
+                        $opts['context_lang'] => $opts['module_description'],
+                    ],
+                ],
             ],
             'context' => [
                 'contextActivities' => [
