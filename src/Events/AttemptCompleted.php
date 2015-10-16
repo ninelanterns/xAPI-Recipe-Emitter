@@ -40,14 +40,16 @@ class AttemptCompleted extends Event {
                 'contextActivities' => [
                     'grouping' => [
                         $this->readCourse($opts),
-                        'id' => $opts['attempt_url'],
-                        'definition' => [
-                            'type' => $opts['attempt_type'],
-                            'name' => [
-                                $opts['context_lang'] => $opts['attempt_name'],
-                            ],
-                            'extensions' => [
-                                $opts['attempt_ext_key'] => $opts['attempt_ext']
+                        [
+                            'id' => $opts['attempt_url'],
+                            'definition' => [
+                                'type' => $opts['attempt_type'],
+                                'name' => [
+                                    $opts['context_lang'] => $opts['attempt_name'],
+                                ],
+                                'extensions' => [
+                                    $opts['attempt_ext_key'] => $opts['attempt_ext']
+                                ],
                             ],
                         ],
                     ],
