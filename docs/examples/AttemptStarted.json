@@ -19,14 +19,14 @@
             "grouping": [
                 {
                     "objectType": "Activity",
-                    "id": "http://localhost/moodle/course.php?id=1",
+                    "id": "http://localhost/moodle",
                     "definition": {
-                        "type": "http://lrs.learninglocker.net/define/type/moodle/course",
+                        "type": "http://id.tincanapi.com/activitytype/site",
                         "name": {
                             "en": "My Test Site"
                         },
                         "description": {
-                            "en": "<p>A test site.</p>"
+                            "en": "A test site."
                         }
                     }
                 },
@@ -55,6 +55,23 @@
                             "en": "A module"
                         }
                     }
+                }
+            ],
+            "category": [
+                {
+                    "id": "http://moodle.org",
+                    "definition": {
+                        "name": {
+                            "en": "Moodle"
+                        },
+                        "description": {
+                            "en": "Moodle is a open source learning platform designed to provide educators, 
+                            administrators and learners with a single robust, secure and integrated system to 
+                            create personalised learning environments."
+                        },
+                        "type": "http://id.tincanapi.com/activitytype/source"
+                    },
+                    "objectType": "Activity"
                 }
             ]
         },
