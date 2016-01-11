@@ -105,10 +105,10 @@ abstract class EventTest extends PhpUnitTestCase {
             'contextActivities_moodleCatgeory' => [
                 'id'=> 'http://moodle.org',
                 'definition'=> [
-                  'name'=> ]
+                  'name'=> [
                       'en'=> 'Moodle'
                   ],
-                  'description': [
+                  'description'=> [
                       'en'=> 'Moodle is a open source learning platform designed to provide educators, 
                       administrators and learners with a single robust, secure and integrated system to 
                       create personalised learning environments.'
