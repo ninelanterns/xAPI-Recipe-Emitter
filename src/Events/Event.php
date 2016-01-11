@@ -46,19 +46,21 @@ abstract class Event extends PhpObj {
                         $this->readApp($opts)
                     ],
                     'category' => [
-                        'id' => 'http://moodle.org',
-                        'definition' => [
-                            'name' => [
-                                'en' => 'Moodle'
+                        [
+                            'id' => 'http://moodle.org',
+                            'definition' => [
+                                'name' => [
+                                    'en' => 'Moodle'
+                                ],
+                                'description' => [
+                                    'en' => 'Moodle is a open source learning platform designed to provide educators, 
+                                    administrators and learners with a single robust, secure and integrated system to 
+                                    create personalised learning environments.'
+                                ],
+                                'type' => 'http://id.tincanapi.com/activitytype/source'
                             ],
-                            'description' => [
-                                'en' => 'Moodle is a open source learning platform designed to provide educators, 
-                                administrators and learners with a single robust, secure and integrated system to 
-                                create personalised learning environments.'
-                            ],
-                            'type' => 'http://id.tincanapi.com/activitytype/source'
-                        ],
-                        'objectType' => 'Activity'
+                            'objectType' => 'Activity'
+                        ]
                     ]
                 ],
             ],
