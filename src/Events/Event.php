@@ -53,9 +53,9 @@ abstract class Event extends PhpObj {
                                     'en' => 'Moodle'
                                 ],
                                 'description' => [
-                                    'en' => 'Moodle is a open source learning platform designed to provide educators, 
-                                    administrators and learners with a single robust, secure and integrated system to 
-                                    create personalised learning environments.'
+                                    'en'=> 'Moodle is a open source learning platform designed to provide educators,'
+                                    .' administrators and learners with a single robust, secure and integrated system'
+                                    .' to create personalised learning environments.'
                                 ],
                                 'type' => 'http://id.tincanapi.com/activitytype/source'
                             ],
