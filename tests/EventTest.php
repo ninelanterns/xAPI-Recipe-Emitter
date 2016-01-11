@@ -198,6 +198,6 @@ abstract class EventTest extends PhpUnitTestCase {
 
     protected function assertContextActivities($input, $output) {
         $this->assertEquals($input['contextActivities_moodleCatgeory'], $output['category'][0]);
-        $this->assertEquals($input['contextActivities_siteType'], $output['grouping'][0]['definition']['type'];
+        $this->assertEquals($input['contextActivities_siteType'], $output['grouping'][0]['definition']['type']);
     }
 }
