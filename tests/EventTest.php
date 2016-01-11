@@ -31,7 +31,7 @@ abstract class EventTest extends PhpUnitTestCase {
         return array_merge(
             $this->constructUser('user'),
             $this->constructLog(),
-            $this->contructObject('app'),
+            $this->contructObject('app', 'http://id.tincanapi.com/activitytype/site'),
             $this->constructContextActivities(),
             ['recipe' => static::$recipe_name]
         );
@@ -62,12 +62,15 @@ abstract class EventTest extends PhpUnitTestCase {
         ];
     }
 
-    protected function contructObject($type) {
+    protected function contructObject($type, $xapiType = null) {
+        if (is_null($xapiType)){
+            $xapiType = static::$xapi_type.$type;
+        }
         return [
             $type.'_url' => 'http://www.example.com/'.$type.'_url',
             $type.'_name' => 'Test '.$type.'_name',
             $type.'_description' => 'Test '.$type.'_description',
-            $type.'_type' => static::$xapi_type.$type,
+            $type.'_type' => $xapiType,
             $type.'_ext' => [
                 'test_'.$type.'_ext_key' => 'test_'.$type.'_ext_value',
             ],
