@@ -15,7 +15,7 @@ class UserLoggedinTest extends EventTest {
     protected function constructInput() {
         return array_merge(
             parent::constructInput(),
-            $this->contructObject('app')
+            $this->contructObject('app', 'http://id.tincanapi.com/activitytype/site')
         );
     }
 
