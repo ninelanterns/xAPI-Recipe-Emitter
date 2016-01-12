@@ -31,8 +31,7 @@ abstract class EventTest extends PhpUnitTestCase {
         return array_merge(
             $this->constructUser('user'),
             $this->constructLog(),
-            $this->contructObject('app', 'http://id.tincanapi.com/activitytype/site'),
-            $this->constructContextActivities(),
+            $this->contructApp(),
             ['recipe' => static::$recipe_name]
         );
     }
@@ -78,6 +77,19 @@ abstract class EventTest extends PhpUnitTestCase {
         ];
     }
 
+    protected function contructApp() {
+        return [
+            $type.'_url' => 'http://www.example.com/'.$type.'_url',
+            $type.'_name' => 'Test '.$type.'_name',
+            $type.'_description' => 'Test '.$type.'_description',
+            $type.'_type' => $xapiType,
+            $type.'_ext' => [
+                'test_'.$type.'_ext_key' => 'test_'.$type.'_ext_value',
+            ],
+            $type.'_ext_key' => 'http://id.tincanapi.com/activitytype/site',
+        ];
+    }
+
     protected function constructAttempt() {
         return [
             'attempt_url' => 'http://www.example.com/attempt_url',
@@ -103,31 +115,10 @@ abstract class EventTest extends PhpUnitTestCase {
         ];
     }
 
-    protected function constructContextActivities() {
-        return [
-            'contextActivities_moodleCatgeory' => [
-                'id'=> 'http://moodle.org',
-                'definition'=> [
-                  'name'=> [
-                      'en'=> 'Moodle'
-                  ],
-                  'description'=> [
-                      'en'=> 'Moodle is a open source learning platform designed to provide educators,'
-                      .' administrators and learners with a single robust, secure and integrated system '
-                      .'to create personalised learning environments.'
-                  ],
-                  'type'=> 'http://id.tincanapi.com/activitytype/source'
-                ],
-                'objectType'=> 'Activity'
-            ],
-            'contextActivities_siteType' => 'http://id.tincanapi.com/activitytype/site'
-        ];
-    }
-
     protected function assertOutput($input, $output) {
         $this->assertUser($input, $output['actor'], 'user');
         $this->assertObject('app', $input, $output['context']['contextActivities']['grouping'][0]);
-        $this->assertContextActivities($input, $output['context']['contextActivities']);
+        $this->assertContextActivities($output['context']['contextActivities']);
         $this->assertLog($input, $output);
         $this->assertInfo(
             $input['context_info'],
@@ -199,8 +190,22 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input['attempt_ext'], $output['definition']['extensions'][$input['attempt_ext_key']]);
     }
 
-    protected function assertContextActivities($input, $output) {
-        $this->assertEquals($input['contextActivities_moodleCatgeory'], $output['category'][0]);
-        $this->assertEquals($input['contextActivities_siteType'], $output['grouping'][0]['definition']['type']);
+    protected function assertContextActivities($output) {
+        $this->assertEquals([
+            'id'=> 'http://moodle.org',
+            'definition'=> [
+              'name'=> [
+                  'en'=> 'Moodle'
+              ],
+              'description'=> [
+                  'en'=> 'Moodle is a open source learning platform designed to provide educators,'
+                  .' administrators and learners with a single robust, secure and integrated system '
+                  .'to create personalised learning environments.'
+              ],
+              'type'=> 'http://id.tincanapi.com/activitytype/source'
+            ],
+            'objectType'=> 'Activity'
+        ], $output['category'][0]);
+        $this->assertEquals('http://id.tincanapi.com/activitytype/site', $output['grouping'][0]['definition']['type']);
     }
 }
