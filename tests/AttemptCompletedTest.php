@@ -43,6 +43,7 @@ class AttemptCompletedTest extends EventTest {
         $this->assertEquals($input['attempt_score_min'], $output['result']['score']['min']);
         $this->assertEquals($input['attempt_score_max'], $output['result']['score']['max']);
         $this->assertEquals($input['attempt_score_scaled'], $output['result']['score']['scaled']);
+        $this->assertEquals($input['attempt_success'], $output['result']['success']);
         $this->assertEquals($input['attempt_completed'], $output['result']['completion']);
         $this->assertEquals($input['attempt_duration'], $output['result']['duration']);
     }
