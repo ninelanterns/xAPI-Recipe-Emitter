@@ -83,7 +83,7 @@ abstract class EventTest extends PhpUnitTestCase {
             $type.'_url' => 'http://www.example.com/'.$type.'_url',
             $type.'_name' => 'Test '.$type.'_name',
             $type.'_description' => 'Test '.$type.'_description',
-            $type.'_type' => $xapiType,
+            $type.'_type' => $type,
             $type.'_ext' => [
                 'test_'.$type.'_ext_key' => 'test_'.$type.'_ext_value',
             ],
