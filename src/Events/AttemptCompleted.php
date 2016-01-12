@@ -1,6 +1,6 @@
 <?php namespace XREmitter\Events;
 
-class AttemptCompleted extends AttemptStarted {
+class AttemptCompleted extends Event {
     protected static $verb_display = [
         'en' => 'completed'
     ];
@@ -12,6 +12,7 @@ class AttemptCompleted extends AttemptStarted {
      * @override Event
      */
     public function read(array $opts) {
+
         $statement = [
             'verb' => [
                 'id' => 'http://adlnet.gov/expapi/verbs/completed',
@@ -26,6 +27,37 @@ class AttemptCompleted extends AttemptStarted {
                 ],
                 'completion' => $opts['attempt_completed'],
                 'duration' => $opts['attempt_duration'],
+            ],
+            'object' => [
+                'id' => $opts['module_url'],
+                'definition' => [
+                    'type' => $opts['module_type'],
+                    'name' => [
+                        $opts['context_lang'] => $opts['module_name'],
+                    ],
+                    'description' => [
+                        $opts['context_lang'] => $opts['module_description'],
+                    ],
+                ],
+            ],
+            'context' => [
+                'contextActivities' => [
+                    'grouping' => [
+                        $this->readCourse($opts),
+                        [
+                            'id' => $opts['attempt_url'],
+                            'definition' => [
+                                'type' => $opts['attempt_type'],
+                                'name' => [
+                                    $opts['context_lang'] => $opts['attempt_name'],
+                                ],
+                                'extensions' => [
+                                    $opts['attempt_ext_key'] => $opts['attempt_ext']
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ];
 
