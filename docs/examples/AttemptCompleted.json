@@ -16,10 +16,14 @@
     },
     "result": {
         "score": {
-            "raw": 1
+            "raw": 1,
+            "min": 0,
+            "max": 5,
+            "scaled": 0.2
         },
         "completion": true,
-        "duration": "P00Y00M00DT00H00M32S"
+        "success": false,
+        "duration": "PT32S"
     },
     "context": {
         "contextActivities": {
