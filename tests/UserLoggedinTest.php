@@ -15,7 +15,7 @@ class UserLoggedinTest extends EventTest {
     protected function constructInput() {
         return array_merge(
             parent::constructInput(),
-            $this->contructApp()
+            $this->constructApp()
         );
     }
 
