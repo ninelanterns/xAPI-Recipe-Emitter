@@ -78,6 +78,7 @@ abstract class EventTest extends PhpUnitTestCase {
     }
 
     protected function contructApp() {
+        $type = 'app';
         return [
             $type.'_url' => 'http://www.example.com/'.$type.'_url',
             $type.'_name' => 'Test '.$type.'_name',
