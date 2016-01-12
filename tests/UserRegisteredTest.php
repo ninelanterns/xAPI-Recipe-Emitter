@@ -15,7 +15,7 @@ class UserRegisteredTest extends EventTest {
     protected function constructInput() {
         return array_merge(
             parent::constructInput(),
-            $this->contructObject('app')
+            $this->contructApp()
         );
     }
 

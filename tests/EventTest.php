@@ -31,7 +31,7 @@ abstract class EventTest extends PhpUnitTestCase {
         return array_merge(
             $this->constructUser('user'),
             $this->constructLog(),
-            $this->contructObject('app'),
+            $this->contructApp(),
             ['recipe' => static::$recipe_name]
         );
     }
@@ -61,12 +61,29 @@ abstract class EventTest extends PhpUnitTestCase {
         ];
     }
 
-    protected function contructObject($type) {
+    protected function contructObject($type, $xapiType = null) {
+        if (is_null($xapiType)){
+            $xapiType = static::$xapi_type.$type;
+        }
         return [
             $type.'_url' => 'http://www.example.com/'.$type.'_url',
             $type.'_name' => 'Test '.$type.'_name',
             $type.'_description' => 'Test '.$type.'_description',
-            $type.'_type' => static::$xapi_type.$type,
+            $type.'_type' => $xapiType,
+            $type.'_ext' => [
+                'test_'.$type.'_ext_key' => 'test_'.$type.'_ext_value',
+            ],
+            $type.'_ext_key' => 'http://www.example.com/'.$type.'_ext_key',
+        ];
+    }
+
+    protected function contructApp() {
+        $type = 'app';
+        return [
+            $type.'_url' => 'http://www.example.com/'.$type.'_url',
+            $type.'_name' => 'Test '.$type.'_name',
+            $type.'_description' => 'Test '.$type.'_description',
+            $type.'_type' => 'http://id.tincanapi.com/activitytype/site',
             $type.'_ext' => [
                 'test_'.$type.'_ext_key' => 'test_'.$type.'_ext_value',
             ],
@@ -102,6 +119,7 @@ abstract class EventTest extends PhpUnitTestCase {
     protected function assertOutput($input, $output) {
         $this->assertUser($input, $output['actor'], 'user');
         $this->assertObject('app', $input, $output['context']['contextActivities']['grouping'][0]);
+        $this->assertContextActivities($output['context']['contextActivities']);
         $this->assertLog($input, $output);
         $this->assertInfo(
             $input['context_info'],
@@ -171,5 +189,24 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input['attempt_type'], $output['definition']['type']);
         $this->assertArrayHasKey($input['attempt_ext_key'], $output['definition']['extensions']);
         $this->assertEquals($input['attempt_ext'], $output['definition']['extensions'][$input['attempt_ext_key']]);
+    }
+
+    protected function assertContextActivities($output) {
+        $this->assertEquals([
+            'id'=> 'http://moodle.org',
+            'definition'=> [
+              'name'=> [
+                  'en'=> 'Moodle'
+              ],
+              'description'=> [
+                  'en'=> 'Moodle is a open source learning platform designed to provide educators,'
+                  .' administrators and learners with a single robust, secure and integrated system '
+                  .'to create personalised learning environments.'
+              ],
+              'type'=> 'http://id.tincanapi.com/activitytype/source'
+            ],
+            'objectType'=> 'Activity'
+        ], $output['category'][0]);
+        $this->assertEquals('http://id.tincanapi.com/activitytype/site', $output['grouping'][0]['definition']['type']);
     }
 }
