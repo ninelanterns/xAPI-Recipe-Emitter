@@ -20,9 +20,13 @@ class AssignmentGraded extends Event {
             ],
             'result' => [
                 'score' => [
-                    'raw' => $opts['grade_result'],
+                    'raw' => $opts['grade_score_raw'],
+                    'min' => $opts['grade_score_min'],
+                    'max' => $opts['grade_score_max'],
+                    'scaled' => $opts['grade_score_scaled']
                 ],
-                'completion' => true,
+                'completion' => $opts['grade_completed'],
+                'response' => $opts['grade_comment']
             ],
             'object' => $this->readModule($opts),
             'context' => [
@@ -44,6 +48,10 @@ class AssignmentGraded extends Event {
                 'name' => $opts['graded_user_id'],
             ],
         ];
+
+        if (!is_null($opts['grade_success'])) {
+            $statement['result']['success'] = $opts['grade_success'];
+        }
 
         return $statement;
     }
