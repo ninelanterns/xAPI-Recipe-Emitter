@@ -2,7 +2,7 @@
 
 class AssignmentGraded extends Event {
     protected static $verb_display = [
-        'en' => 'evaluated'
+        'en' => 'recieved grade for'
     ];
 
     /**
@@ -12,9 +12,10 @@ class AssignmentGraded extends Event {
      * @override Event
      */
     public function read(array $opts) {
-        return array_merge_recursive(parent::read($opts), [
+        $instructor = parent::read($opts)['actor'];
+        $statement =  array_merge_recursive(parent::read($opts), [
             'verb' => [
-                'id' => 'http://www.tincanapi.co.uk/verbs/evaluated',
+                'id' => 'http://adlnet.gov/expapi/verbs/scored',
                 'display' => $this->readVerbDisplay($opts),
             ],
             'result' => [
@@ -23,22 +24,27 @@ class AssignmentGraded extends Event {
                 ],
                 'completion' => true,
             ],
-            'object' => [
-                'objectType' => 'Agent',
-                'name' => $opts['graded_user_name'],
-                'account' => [
-                    'homePage' => $opts['graded_user_url'],
-                    'name' => $opts['graded_user_id'],
-                ],
-            ],
+            'object' => $this->readModule($opts),
             'context' => [
                 'contextActivities' => [
-                    'grouping' => [
+                    'parent' => [
                         $this->readCourse($opts),
-                        $this->readModule($opts),
                     ],
                 ],
+                'instructor' => $instructor
             ],
         ]);
+
+        //Excluded from array merge to make sure that the actor is overwritten e.g. if a different IFI is used. 
+        $statement['actor'] = [
+            'objectType' => 'Agent',
+            'name' => $opts['graded_user_name'],
+            'account' => [
+                'homePage' => $opts['graded_user_url'],
+                'name' => $opts['graded_user_id'],
+            ],
+        ];
+
+        return $statement;
     }
 }
