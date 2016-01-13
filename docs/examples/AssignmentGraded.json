@@ -16,9 +16,13 @@
     },
     "result": {
         "score": {
-            "raw": 34
+            "scaled": 0.67,
+            "raw": 67,
+            "max": 100
         },
-        "completion": true
+        "success": true,
+        "completion": true,
+        "response": "Some feedback from the instructor."
     },
     "context": {
         "contextActivities": {
