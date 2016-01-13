@@ -2,16 +2,16 @@
     "version": "1.0.0",
     "actor": {
         "objectType": "Agent",
-        "name": "ryansmith",
+        "name": "learner",
         "account": {
-            "name": "2",
+            "name": "3",
             "homePage": "http://localhost/moodle"
         }
     },
     "verb": {
-        "id": "http://www.tincanapi.co.uk/verbs/evaluated",
+        "id": "http://adlnet.gov/expapi/verbs/scored",
         "display": {
-            "en": "evaluated"
+            "en": "recieved grade for"
         }
     },
     "result": {
@@ -22,20 +22,7 @@
     },
     "context": {
         "contextActivities": {
-            "grouping": [
-                {
-                    "objectType": "Activity",
-                    "id": "http://localhost/moodle",
-                    "definition": {
-                        "type": "http://id.tincanapi.com/activitytype/site",
-                        "name": {
-                            "en": "My Test Site"
-                        },
-                        "description": {
-                            "en": "A test site."
-                        }
-                    }
-                },
+            "parent": [
                 {
                     "objectType": "Activity",
                     "id": "http://localhost/moodle/course.php?id=2",
@@ -48,17 +35,19 @@
                             "en": "<p>A test course.</p>"
                         }
                     }
-                },
+                }
+            ],
+            "grouping": [
                 {
                     "objectType": "Activity",
-                    "id": "http://localhost/moodle/mod/assign/view.php?id=11",
+                    "id": "http://localhost/moodle",
                     "definition": {
-                        "type": "http://lrs.learninglocker.net/define/type/moodle/assign",
+                        "type": "http://id.tincanapi.com/activitytype/site",
                         "name": {
-                            "en": "My Test Assignment 3"
+                            "en": "My Test Site"
                         },
                         "description": {
-                            "en": "A module"
+                            "en": "A test site."
                         }
                     }
                 }
@@ -82,6 +71,14 @@
             ]
         },
         "platform": "Moodle",
+        "instructor": {
+            "objectType": "Agent",
+            "name": "instructor",
+            "account": {
+                "name": "2",
+                "homePage": "http://localhost/moodle"
+            }
+        },
         "extensions": {
             "http://lrs.learninglocker.net/define/extensions/moodle_logstore_standard_log": {
                 "eventname": "\\mod_assign\\event\\submission_graded",
@@ -113,11 +110,17 @@
     },
     "timestamp": "2015-06-18T10:57:03+01:00",
     "object": {
-        "objectType": "Agent",
-        "name": "ryansmith",
-        "account": {
-            "name": "2",
-            "homePage": "http://localhost/moodle"
+            "objectType": "Activity",
+            "id": "http://localhost/moodle/mod/assign/view.php?id=11",
+            "definition": {
+                "type": "http://lrs.learninglocker.net/define/type/moodle/assign",
+                "name": {
+                    "en": "My Test Assignment 3"
+                },
+                "description": {
+                    "en": "A module"
+                }
+            }
         }
     },
     "authority": {
