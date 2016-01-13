@@ -18,7 +18,15 @@ class AssignmentGradedTest extends EventTest {
             $this->contructObject('course'),
             $this->contructObject('module'),
             $this->constructUser('graded_user'),
-            ['grade_result' => 1]
+            [
+                'grade_score_raw' => 47,
+                'grade_score_min' => 0,
+                'grade_score_max' => 100,
+                'grade_score_scaled' => 0.47,
+                'grade_success' => true,
+                'grade_completed' => true,
+                'grade_comment' => 'test comment from instructor'
+            ]
         );
     }
 
