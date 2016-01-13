@@ -173,7 +173,7 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input[$type.'_name'], $output['name']);
     }
 
-    private function assertLog($input, $output) {
+    protected function assertLog($input, $output) {
         $actual_context = $output['context'];
         $this->assertEquals($input['context_lang'], $actual_context['language']);
         $this->assertEquals($input['context_platform'], $actual_context['platform']);
