@@ -35,8 +35,13 @@ class AssignmentGradedTest extends EventTest {
         $this->assertVerb('http://adlnet.gov/expapi/verbs/scored', 'recieved grade for', $output['verb']);
         $this->assertObject('module', $input, $output['object']);
         $this->assertObject('course', $input, $output['context']['contextActivities']['parent'][0]);
-        $this->assertEquals($input['grade_result'], $output['result']['score']['raw']);
-        $this->assertEquals(true, $output['result']['completion']);
+        $this->assertEquals($input['grade_score_raw'], $output['result']['score']['raw']);
+        $this->assertEquals($input['grade_score_min'], $output['result']['score']['min']);
+        $this->assertEquals($input['grade_score_max'], $output['result']['score']['max']);
+        $this->assertEquals($input['grade_score_scaled'], $output['result']['score']['scaled']);
+        $this->assertEquals($input['grade_success'], $output['result']['success']);
+        $this->assertEquals($input['grade_completed'], $output['result']['completion']);
+        $this->assertEquals($input['grade_comment'], $output['result']['response']);
         $this->assertUser($input, $output['context']['instructor'], 'user');
     }
 }
