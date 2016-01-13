@@ -34,7 +34,7 @@ class AssignmentGradedTest extends EventTest {
         $this->assertValidXapiStatement($output);
         $this->assertVerb('http://adlnet.gov/expapi/verbs/scored', 'recieved grade for', $output['verb']);
         $this->assertObject('module', $input, $output['object']);
-        $this->assertObject('course', $input, $output['parent'][0]);
+        $this->assertObject('course', $input, $output['context']['contextActivities']['parent'][0]);
         $this->assertEquals($input['grade_result'], $output['result']['score']['raw']);
         $this->assertEquals(true, $output['result']['completion']);
         $this->assertUser($input, $output['context']['instructor'], 'user');
