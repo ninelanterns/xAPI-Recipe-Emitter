@@ -65,7 +65,7 @@ abstract class Event extends PhpObj {
     }
 
     protected function readActivity(array $opts, $key) {
-        return [
+        $activity = [
             'id' => $opts[$key.'_url'],
             'definition' => [
                 'type' => $opts[$key.'_type'],
@@ -77,6 +77,13 @@ abstract class Event extends PhpObj {
                 ],
             ],
         ];
+
+        if (isset($opts[$key.'_ext']) && isset($opts[$key.'_ext_key'])) {
+            $activity['definition']['extensions'] = [];
+            $activity['definition']['extensions'][$opts[$key.'_ext_key']] = $opts[$key.'_ext'];
+        }
+
+        return $activity;
     }
 
     protected function readCourse($opts) {
@@ -97,6 +104,34 @@ abstract class Event extends PhpObj {
 
     protected function readDiscussion($opts) {
         return $this->readActivity($opts, 'discussion');
+    }
+
+    protected function readQuestion($opts) {
+        $opts['question_type'] = 'http://adlnet.gov/expapi/activities/cmi.interaction';
+        $question = $this->readActivity($opts, 'question');
+
+        $question['definition']['interactionType'] = $opts['interaction_type'];
+        $question['definition']['correctResponsesPattern'] = $opts['interaction_correct_responses'];
+
+        $supportedComponentLists = [
+            'choice' => ['choices'],
+            'sequencing' => ['choices'],
+            'likert' => ['scale'],
+            'matching' => ['source', 'target'],
+            'performance' => ['steps'],
+            'true-false' => [],
+            'fill-in' => [],
+            'long-fill-in' => [],
+            'numeric' => [],
+            'other' => []
+        ];
+
+        foreach ($supportedComponentLists[$opts['interaction_type']] as $index => $listType) {
+            if (isset($opts['interaction_'.$listType]) && !is_null($opts['interaction_'.$listType])) {
+                $question['definition'][$listType] = $opts['interaction_'.$listType];
+            }
+        }
+        return $question;
     }
 
     protected function readVerbDisplay($opts) {
