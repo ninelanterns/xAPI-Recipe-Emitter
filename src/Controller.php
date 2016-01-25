@@ -8,6 +8,7 @@ class Controller extends PhpObj {
         'discussion_viewed' => 'DiscussionViewed',
         'module_viewed' => 'ModuleViewed',
         'attempt_started' => 'AttemptStarted',
+        'attempt_abandoned' => 'AttemptCompleted',
         'attempt_completed' => 'AttemptCompleted',
         'user_loggedin' => 'UserLoggedin',
         'user_loggedout' => 'UserLoggedout',
