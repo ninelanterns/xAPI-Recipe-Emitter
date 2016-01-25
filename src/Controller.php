@@ -10,6 +10,7 @@ class Controller extends PhpObj {
         'attempt_started' => 'AttemptStarted',
         'attempt_abandoned' => 'AttemptCompleted',
         'attempt_completed' => 'AttemptCompleted',
+        'attempt_question_completed' => 'QuestionAnswered',
         'user_loggedin' => 'UserLoggedin',
         'user_loggedout' => 'UserLoggedout',
         'assignment_graded' => 'AssignmentGraded',
