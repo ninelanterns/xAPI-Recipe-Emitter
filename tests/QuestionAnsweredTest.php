@@ -39,7 +39,7 @@ class QuestionAnsweredTest extends EventTest {
             parent::contructObject('question', 'http://adlnet.gov/expapi/activities/cmi.interaction'),
             [
                 'interaction_type' => 'choice',
-                'interaction_correct_responses' => '[9,10]',
+                'interaction_correct_responses' => ['[9,10]'],
                 'interaction_choices' => [
                     '8' => 'test incorrect choice',
                     '9' => 'test correct choice 1',
