@@ -116,7 +116,7 @@ abstract class EventTest extends PhpUnitTestCase {
 
     protected function constructQuestion() {
         return array_merge(
-            $this->contructObject('question', 'http://adlnet.gov/expapi/activities/cmi.interaction',
+            $this->contructObject('question', 'http://adlnet.gov/expapi/activities/cmi.interaction'),
             [
                 'interaction_type' => 'choice',
                 'interaction_correct_responses' => '[9,10]',
