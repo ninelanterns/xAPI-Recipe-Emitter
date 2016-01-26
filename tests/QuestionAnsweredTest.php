@@ -17,7 +17,7 @@ class QuestionAnsweredTest extends EventTest {
             parent::constructInput(),
             $this->contructObject('course'),
             $this->contructObject('module'),
-            $this->contructQuestion(),
+            $this->constructQuestion(),
             $this->constructAttempt()
         );
     }
