@@ -1,5 +1,5 @@
 <?php namespace XREmitter\Tests;
-use \XREmitter\Events\AttemptCompleted as Event;
+use \XREmitter\Events\QuestionAnswered as Event;
 
 class QuestionAnsweredTest extends EventTest {
     protected static $recipe_name = 'attempt_question_completed';
