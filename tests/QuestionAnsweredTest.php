@@ -34,6 +34,21 @@ class QuestionAnsweredTest extends EventTest {
         ]);
     }
 
+    protected function constructQuestion() {
+        return array_merge(
+            parent::contructObject('question', 'http://adlnet.gov/expapi/activities/cmi.interaction'),
+            [
+                'interaction_type' => 'choice',
+                'interaction_correct_responses' => '[9,10]',
+                'interaction_choices' => [
+                    '8' => 'test incorrect choice',
+                    '9' => 'test correct choice 1',
+                    '10' => 'test correct choice 2'
+                ]
+            ]
+        );
+    }
+
     protected function assertOutput($input, $output) {
         parent::assertOutput($input, $output);
         $this->assertVerb('http://adlnet.gov/expapi/verbs/completed', 'completed', $output['verb']);
