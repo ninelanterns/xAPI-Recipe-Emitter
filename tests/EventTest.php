@@ -209,7 +209,7 @@ abstract class EventTest extends PhpUnitTestCase {
             foreach ($output as $outputItem) {
                 if ($outputItem->id == $id) {
                     $outputId = $outputItem->id;
-                    $outputDescription = $output[$index]['description'][$lang];
+                    $outputDescription = $outputItem->description[$lang];
                 }
             }
             $this->assertEquals($id, $outputId);
