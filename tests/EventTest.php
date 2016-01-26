@@ -202,14 +202,14 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input['attempt_ext'], $output['definition']['extensions'][$input['attempt_ext_key']]);
     }
 
-    protected function assertComponentList($input, $output) {
+    protected function assertComponentList($input, $output, $lang) {
         foreach ($input as $id => $description) {
             $outputId = 'Matching Id not found.';
             $outputDescription = null;
             foreach ($output as $outputItem) {
                 if ($outputItem->id == $id) {
                     $outputId = $outputItem->id;
-                    $outputDescription = $output[$index]['description'][$input['context_lang']];
+                    $outputDescription = $output[$index]['description'][$lang];
                 }
             }
             $this->assertEquals($id, $outputId);

@@ -58,7 +58,7 @@ class QuestionAnsweredTest extends EventTest {
         $this->assertObject('question', $input, $output['object']);
         $this->assertEquals($input['interaction_type'], $output['object']['definition']['interactionType']);
         $this->assertEquals($input['interaction_correct_responses'], $output['object']['definition']['correctResponsesPattern']);
-        $this->assertComponentList($input['interaction_choices'], $output['object']['definition']['choices']);
+        $this->assertComponentList($input['interaction_choices'], $output['object']['definition']['choices'], $input['context_lang']);
         $this->assertEquals($input['attempt_score_raw'], $output['result']['score']['raw']);
         $this->assertEquals($input['attempt_score_min'], $output['result']['score']['min']);
         $this->assertEquals($input['attempt_score_max'], $output['result']['score']['max']);
