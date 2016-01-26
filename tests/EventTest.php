@@ -113,6 +113,21 @@ abstract class EventTest extends PhpUnitTestCase {
             'attempt_name' => 'Test attempt_name',
         ];
     }
+
+    protected function constructQuestion() {
+        return array_merge(
+            $this->contructObject('question', 'http://adlnet.gov/expapi/activities/cmi.interaction',
+            [
+                'interaction_type' => 'choice',
+                'interaction_correct_responses' => '[9,10]',
+                'interaction_choices' => [
+                    '8' => 'test incorrect choice',
+                    '9' => 'test correct choice 1',
+                    '10' => 'test correct choice 2',
+                ]
+            ]
+        );
+    }
     
     protected function constructDiscussion() {
         return [
@@ -202,4 +217,18 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input['attempt_ext'], $output['definition']['extensions'][$input['attempt_ext_key']]);
     }
 
+    protected function assertComponentList($input, $output) {
+        foreach ($input as $id => $description) {
+            $outputId = 'Matching Id not found.';
+            $outputDescription = null;
+            foreach ($output as $outputItem) {
+                if ($outputItem["id"] == $id) {
+                    $outputId = $outputItem["id"];
+                    $outputDescription = $output[$index]['description'][$input['context_lang']];
+                }
+            }
+            $this->assertEquals($id, $outputId);
+            $this->assertEquals($description, $outputDescription);
+        }
+    }
 }
