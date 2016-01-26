@@ -129,9 +129,9 @@ abstract class Event extends PhpObj {
         foreach ($supportedComponentLists[$opts['interaction_type']] as $index => $listType) {
             if (isset($opts['interaction_'.$listType]) && !is_null($opts['interaction_'.$listType])) {
                 $componentList = [];
-                foreach ($opts['interaction_'.$listType]as $id => $description) {
+                foreach ($opts['interaction_'.$listType] as $id => $description) {
                     array_push($componentList, (object)[
-                        'id' => $id,
+                        'id' => (string) $id,
                         'description' => [
                             $opts['context_lang'] => $description,
                         ]
