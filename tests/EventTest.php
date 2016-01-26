@@ -207,8 +207,8 @@ abstract class EventTest extends PhpUnitTestCase {
             $outputId = 'Matching Id not found.';
             $outputDescription = null;
             foreach ($output as $outputItem) {
-                if ($outputItem["id"] == $id) {
-                    $outputId = $outputItem["id"];
+                if ($outputItem->id == $id) {
+                    $outputId = $outputItem->id;
                     $outputDescription = $output[$index]['description'][$input['context_lang']];
                 }
             }
