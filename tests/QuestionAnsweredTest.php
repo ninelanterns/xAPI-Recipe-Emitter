@@ -51,7 +51,7 @@ class QuestionAnsweredTest extends EventTest {
 
     protected function assertOutput($input, $output) {
         parent::assertOutput($input, $output);
-        $this->assertVerb('http://adlnet.gov/expapi/verbs/completed', 'completed', $output['verb']);
+        $this->assertVerb('http://adlnet.gov/expapi/verbs/answered', 'answered', $output['verb']);
         $this->assertAttempt($input, $output['context']['contextActivities']['grouping'][2]);
         $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][1]);
         $this->assertObject('module', $input, $output['context']['contextActivities']['parent'][0]);
