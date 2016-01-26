@@ -123,7 +123,7 @@ abstract class EventTest extends PhpUnitTestCase {
                 'interaction_choices' => [
                     '8' => 'test incorrect choice',
                     '9' => 'test correct choice 1',
-                    '10' => 'test correct choice 2',
+                    '10' => 'test correct choice 2'
                 ]
             ]
         );
