@@ -5,7 +5,7 @@ use \stdClass as PhpObj;
 
 class Repository extends PhpObj {
     protected $store;
-    
+
     /**
      * Constructs a new Repository.
      * @param TinCanRemoteLrs $store
@@ -17,11 +17,11 @@ class Repository extends PhpObj {
 
     /**
      * Creates an event in the store.
-     * @param [string => mixed] $event
+     * @param [string => mixed] $statements
      * @return [string => mixed]
      */
-    public function createEvent(array $event) {
-        $this->store->saveStatement(new TinCanStatement($event));
-        return $event;
+    public function createEvents(array $statements) {
+        $this->store->saveStatements($statements);
+        return $statements;
     }
 }
