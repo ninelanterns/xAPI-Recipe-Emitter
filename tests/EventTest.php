@@ -219,7 +219,7 @@ abstract class EventTest extends PhpUnitTestCase {
     }
 
     protected function createExampleFile($output) {
-        $event_name = str_replace('Test', '', array_pop(explode('\\', __CLASS__)));
+        $event_name = str_replace('Test', '', array_pop(explode('\\', get_class())));
         $example_file = __DIR__.'/../docs/examples/'.$event_name.'.json';
         file_put_contents($example_file, json_encode($output, JSON_PRETTY_PRINT));
     }
