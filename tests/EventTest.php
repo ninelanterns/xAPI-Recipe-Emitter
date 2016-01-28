@@ -25,6 +25,7 @@ abstract class EventTest extends PhpUnitTestCase {
         $input = $this->constructInput();
         $output = $this->event->read($input);
         $this->assertOutput($input, $output);
+        $this->createExampleFile($output);
     }
 
     protected function constructInput() {
@@ -215,5 +216,11 @@ abstract class EventTest extends PhpUnitTestCase {
             $this->assertEquals($id, $outputId);
             $this->assertEquals($description, $outputDescription);
         }
+    }
+
+    protected function createExampleFile($output) {
+        $event_name = str_replace('Test', '', array_pop(explode('\\', get_class($this))));
+        $example_file = __DIR__.'/../docs/examples/'.$event_name.'.json';
+        file_put_contents($example_file, json_encode($output, JSON_PRETTY_PRINT));
     }
 }
