@@ -1,99 +1,83 @@
 {
-    "version": "1.0.0",
     "actor": {
-        "objectType": "Agent",
-        "name": "ryansmith",
+        "name": "Test user_name",
         "account": {
-            "name": "3",
-            "homePage": "http://localhost/moodle"
-        }
-    },
-    "verb": {
-        "id": "http://adlnet.gov/expapi/verbs/registered",
-        "display": {
-            "en": "registered to"
+            "homePage": "http:\/\/www.example.com\/user_url",
+            "name": "1"
         }
     },
     "context": {
         "platform": "Moodle",
+        "language": "en",
         "extensions": {
-            "http://lrs.learninglocker.net/define/extensions/moodle_logstore_standard_log": {
-                "eventname": "\\core\\event\\user_registered",
-                "component": "core",
-                "action": "created",
-                "objecttable": "user",
-                "objectid": "3",
-                "crud": "r",
-                "contextid": 1,
-                "contextlevel": 10,
-                "userid": "3",
-                "other": "a:1:{s:8:\"username\";s:9:\"ryansmith\";}",
-                "timecreated": 1434553404,
-                "origin": "web",
-                "ip": "127.0.0.1",
-                "object": "user"
+            "http:\/\/www.example.com\/context_ext_key": {
+                "test_context_ext_key": "test_context_ext_value"
             },
-            "http://lrs.learninglocker.net/define/extensions/info": {
-                "https://moodle.org/": "1.0.0",
-                "https://github.com/LearningLocker/Moodle-Log-Expander": "1.0.0",
-                "https://github.com/LearningLocker/Moodle-xAPI-Translator": "1.0.0",
-                "https://github.com/LearningLocker/xAPI-Recipe-Emitter": "1.0.0"
+            "http:\/\/lrs.learninglocker.net\/define\/extensions\/info": {
+                "https:\/\/moodle.org\/": "1.0.0",
+                "https:\/\/github.com\/LearningLocker\/Moodle-Log-Expander": "1.0.0",
+                "https:\/\/github.com\/LearningLocker\/Moodle-xAPI-Translator": "1.0.0",
+                "https:\/\/github.com\/LearningLocker\/xAPI-Recipe-Emitter": "1.0.0"
             }
         },
         "contextActivities": {
             "grouping": [
                 {
-                    "objectType": "Activity",
-                    "id": "http://localhost/moodle",
+                    "id": "http:\/\/www.example.com\/app_url",
                     "definition": {
-                        "type": "http://id.tincanapi.com/activitytype/site",
+                        "type": "http:\/\/id.tincanapi.com\/activitytype\/site",
                         "name": {
-                            "en": "My Test Site"
+                            "en": "Test app_name"
                         },
                         "description": {
-                            "en": "A test site."
+                            "en": "Test app_description"
+                        },
+                        "extensions": {
+                            "http:\/\/www.example.com\/app_ext_key": {
+                                "test_app_ext_key": "test_app_ext_value"
+                            }
                         }
                     }
                 }
             ],
             "category": [
                 {
-                    "id": "http://moodle.org",
+                    "id": "http:\/\/www.example.com\/source_url",
                     "definition": {
+                        "type": "http:\/\/id.tincanapi.com\/activitytype\/source",
                         "name": {
-                            "en": "Moodle"
+                            "en": "Test source_name"
                         },
                         "description": {
-                            "en": "Moodle is a open source learning platform designed to provide educators, 
-                            administrators and learners with a single robust, secure and integrated system to 
-                            create personalised learning environments."
-                        },
-                        "type": "http://id.tincanapi.com/activitytype/source"
-                    },
-                    "objectType": "Activity"
+                            "en": "Test source_description"
+                        }
+                    }
                 }
             ]
         }
     },
-    "timestamp": "2015-06-17T16:03:24+01:00",
-    "object": {
-        "objectType": "Activity",
-        "id": "http://localhost/moodle/course.php?id=1",
-        "definition": {
-            "type": "http://lrs.learninglocker.net/define/type/moodle/course",
-            "name": {
-                "en": "My Test Site"
-            },
-            "description": {
-                "en": "<p>A test site.</p>"
-            }
+    "timestamp": "2015-01-01T01:00Z",
+    "verb": {
+        "id": "http:\/\/adlnet.gov\/expapi\/verbs\/registered",
+        "display": {
+            "en": "registered to"
         }
     },
-    "authority": {
-        "objectType": "Agent",
-        "name": "New Client",
-        "mbox": "mailto:hello@learninglocker.net"
-    },
-    "stored": "2015-06-17T15:03:24.484500+00:00",
-    "id": "1d5e50a4-4aae-4fb2-9383-5271bccbc8c0"
+    "object": {
+        "id": "http:\/\/www.example.com\/app_url",
+        "definition": {
+            "type": "http:\/\/id.tincanapi.com\/activitytype\/site",
+            "name": {
+                "en": "Test app_name"
+            },
+            "description": {
+                "en": "Test app_description"
+            },
+            "extensions": {
+                "http:\/\/www.example.com\/app_ext_key": {
+                    "test_app_ext_key": "test_app_ext_value"
+                }
+            }
+        }
+    }
 }
