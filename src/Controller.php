@@ -5,6 +5,7 @@ class Controller extends PhpObj {
     protected $repo;
     public static $routes = [
         'course_viewed' => 'CourseViewed',
+        'course_completed' => 'CourseCompleted',
         'discussion_viewed' => 'DiscussionViewed',
         'module_viewed' => 'ModuleViewed',
         'attempt_started' => 'AttemptStarted',
