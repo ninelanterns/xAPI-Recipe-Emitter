@@ -2,7 +2,7 @@
 use \XREmitter\Events\Attended as Event;
 
 class AttendedTest extends EventTest {
-    protected static $recipe_name = 'module_viewed';
+    protected static $recipe_name = 'training_session_attend';
 
     /**
      * Sets up the tests.
@@ -31,7 +31,7 @@ class AttendedTest extends EventTest {
         $this->assertUser($input, $output['actor'], 'attendee');
         $this->assertUser($input, $output['context']['instructor'], 'user');
         $this->assertVerb('http://adlnet.gov/expapi/verbs/attended', 'attended', $output['verb']);
-        $this->assertObject('question', $input, $output['object']);
+        $this->assertObject('session', $input, $output['object']);
         $this->assertObject('module', $input, $output['context']['contextActivities']['parent'][0]);
         $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][1]);
         $this->assertEquals($input['attempt_duration'], $output['result']['duration']);
