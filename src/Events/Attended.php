@@ -1,6 +1,6 @@
 <?php namespace XREmitter\Events;
 
-class AttemptStarted extends Event {
+class Attended extends Event {
     protected static $verb_display = [
         'en' => 'attended'
     ];
@@ -12,8 +12,7 @@ class AttemptStarted extends Event {
      * @override Event
      */
     public function read(array $opts) {
-        return array_merge_recursive(parent::read($opts), [
-            'actor' => $this->readUser($opts, 'attendee'),
+        $statement = array_merge_recursive(parent::read($opts), [
             'verb' => [
                 'id' => 'http://adlnet.gov/expapi/verbs/attended',
                 'display' => $this->readVerbDisplay($opts),
@@ -52,5 +51,10 @@ class AttemptStarted extends Event {
                 ],
             ],
         ]);
+
+        // Overwrite actor, don't merge it. 
+        $statement['actor'] = $this->readUser($opts, 'attendee');
+
+        return $statement;
     }
 }
