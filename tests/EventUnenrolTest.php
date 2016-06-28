@@ -1,7 +1,7 @@
 <?php namespace XREmitter\Tests;
-use \XREmitter\Events\Attended as Event;
+use \XREmitter\Events\EventUnenrol as Event;
 
-class AttendedTest extends EventTest {
+class EventUnenrolTest extends EventTest {
     protected static $recipe_name = 'training_session_unenrol';
 
     /**
