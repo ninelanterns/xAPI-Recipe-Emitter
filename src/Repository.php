@@ -21,7 +21,10 @@ class Repository extends PhpObj {
      * @return [string => mixed]
      */
     public function createEvents(array $statements) {
-        $this->store->saveStatements($statements);
-        return $statements;
+        $response = $this->store->saveStatements($statements);
+        return [
+            "statements" => $statements,
+            "response" => $response
+        ];
     }
 }
