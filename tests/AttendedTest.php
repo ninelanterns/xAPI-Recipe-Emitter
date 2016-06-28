@@ -20,8 +20,8 @@ class AttendedTest extends EventTest {
             $this->contructObject('session', 'http://activitystrea.ms/schema/1.0/event'),
             $this->constructUser('attendee'),
             [
-                "attempt_duration": "PT150S",
-                "attempt_completion": true
+                "attempt_duration" => "PT150S",
+                "attempt_completion" => true
             ]
         );
     }
