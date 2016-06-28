@@ -25,6 +25,7 @@ abstract class EventTest extends PhpUnitTestCase {
         $input = $this->constructInput();
         $output = $this->event->read($input);
         $this->assertOutput($input, $output);
+        $this->createExampleFile($output);
     }
 
     protected function constructInput() {
@@ -113,7 +114,7 @@ abstract class EventTest extends PhpUnitTestCase {
             'attempt_name' => 'Test attempt_name',
         ];
     }
-    
+
     protected function constructDiscussion() {
         return [
             'discussion_url' => 'http://www.example.com/discussion_url',
@@ -202,4 +203,25 @@ abstract class EventTest extends PhpUnitTestCase {
         $this->assertEquals($input['attempt_ext'], $output['definition']['extensions'][$input['attempt_ext_key']]);
     }
 
+    protected function assertComponentList($input, $output, $lang) {
+        foreach ($input as $id => $description) {
+            $outputId = 'Matching Id not found.';
+            $outputDescription = null;
+            foreach ($output as $outputItem) {
+                if ($outputItem->id == $id) {
+                    $outputId = $outputItem->id;
+                    $outputDescription = $outputItem->description[$lang];
+                }
+            }
+            $this->assertEquals($id, $outputId);
+            $this->assertEquals($description, $outputDescription);
+        }
+    }
+
+    protected function createExampleFile($output) {
+        $class_array = explode('\\', get_class($this));
+        $event_name = str_replace('Test', '', array_pop($class_array));
+        $example_file = __DIR__.'/../docs/examples/'.$event_name.'.json';
+        file_put_contents($example_file, json_encode($output, JSON_PRETTY_PRINT));
+    }
 }

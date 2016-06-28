@@ -1,9 +1,8 @@
 {
     "actor": {
-        "objectType": "Agent",
-        "name": "Test graded_user_name",
+        "name": "Test user_name",
         "account": {
-            "homePage": "http:\/\/www.example.com\/graded_user_url",
+            "homePage": "http:\/\/www.example.com\/user_url",
             "name": "1"
         }
     },
@@ -54,66 +53,29 @@
                         }
                     }
                 }
-            ],
-            "parent": [
-                {
-                    "id": "http:\/\/www.example.com\/course_url",
-                    "definition": {
-                        "type": "http:\/\/lrs.learninglocker.net\/define\/type\/moodle\/course",
-                        "name": {
-                            "en": "Test course_name"
-                        },
-                        "description": {
-                            "en": "Test course_description"
-                        },
-                        "extensions": {
-                            "http:\/\/www.example.com\/course_ext_key": {
-                                "test_course_ext_key": "test_course_ext_value"
-                            }
-                        }
-                    }
-                }
             ]
-        },
-        "instructor": {
-            "name": "Test user_name",
-            "account": {
-                "homePage": "http:\/\/www.example.com\/user_url",
-                "name": "1"
-            }
         }
     },
     "timestamp": "2015-01-01T01:00Z",
     "verb": {
-        "id": "http:\/\/adlnet.gov\/expapi\/verbs\/scored",
+        "id": "http:\/\/adlnet.gov\/expapi\/verbs\/completed",
         "display": {
-            "en": "recieved grade for"
+            "en": "completed"
         }
     },
-    "result": {
-        "score": {
-            "raw": 47,
-            "min": 0,
-            "max": 100,
-            "scaled": 0.47
-        },
-        "completion": true,
-        "response": "test comment from instructor",
-        "success": true
-    },
     "object": {
-        "id": "http:\/\/www.example.com\/module_url",
+        "id": "http:\/\/www.example.com\/course_url",
         "definition": {
-            "type": "http:\/\/lrs.learninglocker.net\/define\/type\/moodle\/module",
+            "type": "http:\/\/lrs.learninglocker.net\/define\/type\/moodle\/course",
             "name": {
-                "en": "Test module_name"
+                "en": "Test course_name"
             },
             "description": {
-                "en": "Test module_description"
+                "en": "Test course_description"
             },
             "extensions": {
-                "http:\/\/www.example.com\/module_ext_key": {
-                    "test_module_ext_key": "test_module_ext_value"
+                "http:\/\/www.example.com\/course_ext_key": {
+                    "test_course_ext_key": "test_course_ext_value"
                 }
             }
         }

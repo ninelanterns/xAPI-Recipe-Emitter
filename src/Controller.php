@@ -5,10 +5,13 @@ class Controller extends PhpObj {
     protected $repo;
     public static $routes = [
         'course_viewed' => 'CourseViewed',
+        'course_completed' => 'CourseCompleted',
         'discussion_viewed' => 'DiscussionViewed',
         'module_viewed' => 'ModuleViewed',
         'attempt_started' => 'AttemptStarted',
+        'attempt_abandoned' => 'AttemptCompleted',
         'attempt_completed' => 'AttemptCompleted',
+        'attempt_question_completed' => 'QuestionAnswered',
         'user_loggedin' => 'UserLoggedin',
         'user_loggedout' => 'UserLoggedout',
         'assignment_graded' => 'AssignmentGraded',
@@ -28,19 +31,20 @@ class Controller extends PhpObj {
 
     /**
      * Creates a new event.
-     * @param [String => Mixed] $opts
+     * @param [String => Mixed] $events
      * @return [String => Mixed]
      */
-    public function createEvent(array $opts) {
-        $route = isset($opts['recipe']) ? $opts['recipe'] : '';
-        if (isset(static::$routes[$route])) {
-            $event = '\XREmitter\Events\\'.static::$routes[$route];
-            $service = new $event($this->repo);
-            $opts['context_lang'] = $opts['context_lang'] ?: 'en';
-            $statement = $service->read($opts);
-            return $service->create($statement);
-        } else {
-            return null;
+    public function createEvents(array $events) {
+        $statements = [];
+        foreach ($events as $index => $opts) {
+            $route = isset($opts['recipe']) ? $opts['recipe'] : '';
+            if (isset(static::$routes[$route])) {
+                $event = '\XREmitter\Events\\'.static::$routes[$route];
+                $service = new $event($this->repo);
+                $opts['context_lang'] = $opts['context_lang'] ?: 'en';
+                array_push($statements, $service->read($opts));
+            }
         }
+        return $this->repo->createEvents($statements);
     }
 }

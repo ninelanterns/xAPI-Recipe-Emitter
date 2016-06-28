@@ -1,113 +1,90 @@
 {
-    "version": "1.0.0",
     "actor": {
-        "objectType": "Agent",
-        "name": "ryansmith",
+        "name": "Test user_name",
         "account": {
-            "name": "2",
-            "homePage": "http://localhost/moodle"
-        }
-    },
-    "verb": {
-        "id": "http://www.tincanapi.co.uk/verbs/enrolled_onto_learning_plan",
-        "display": {
-            "en": "enrolled onto"
+            "homePage": "http:\/\/www.example.com\/user_url",
+            "name": "1"
         }
     },
     "context": {
         "platform": "Moodle",
-        "instructor": {
-            "objectType": "Agent",
-            "name": "ryansmith",
-            "account": {
-                "name": "2",
-                "homePage": "http://localhost/moodle"
-            }
-        },
+        "language": "en",
         "extensions": {
-            "http://lrs.learninglocker.net/define/extensions/moodle_logstore_standard_log": {
-                "eventname": "\\core\\event\\user_enrolment_created",
-                "component": "core",
-                "action": "created",
-                "target": "user_enrolments",
-                "objecttable": "user_enrolments",
-                "objectid": 1,
-                "crud": "c",
-                "edulevel": 2,
-                "contextid": 24,
-                "contextlevel": 50,
-                "contextinstanceid": "2",
-                "userid": "2",
-                "courseid": "2",
-                "relateduserid": null,
-                "anonymous": 0,
-                "other": "N;",
-                "timecreated": 1434624675,
-                "origin": "web",
-                "ip": "127.0.0.1",
-                "realuserid": null
+            "http:\/\/www.example.com\/context_ext_key": {
+                "test_context_ext_key": "test_context_ext_value"
             },
-            "http://lrs.learninglocker.net/define/extensions/info": {
-                "https://moodle.org/": "1.0.0",
-                "https://github.com/LearningLocker/Moodle-Log-Expander": "1.0.0",
-                "https://github.com/LearningLocker/Moodle-xAPI-Translator": "1.0.0",
-                "https://github.com/LearningLocker/xAPI-Recipe-Emitter": "1.0.0"
+            "http:\/\/lrs.learninglocker.net\/define\/extensions\/info": {
+                "https:\/\/moodle.org\/": "1.0.0",
+                "https:\/\/github.com\/LearningLocker\/Moodle-Log-Expander": "1.0.0",
+                "https:\/\/github.com\/LearningLocker\/Moodle-xAPI-Translator": "1.0.0",
+                "https:\/\/github.com\/LearningLocker\/xAPI-Recipe-Emitter": "1.0.0"
             }
         },
         "contextActivities": {
             "grouping": [
                 {
-                    "objectType": "Activity",
-                    "id": "http://localhost/moodle",
+                    "id": "http:\/\/www.example.com\/app_url",
                     "definition": {
-                        "type": "http://id.tincanapi.com/activitytype/site",
+                        "type": "http:\/\/id.tincanapi.com\/activitytype\/site",
                         "name": {
-                            "en": "My Test Site"
+                            "en": "Test app_name"
                         },
                         "description": {
-                            "en": "A test site."
+                            "en": "Test app_description"
+                        },
+                        "extensions": {
+                            "http:\/\/www.example.com\/app_ext_key": {
+                                "test_app_ext_key": "test_app_ext_value"
+                            }
                         }
                     }
                 }
             ],
             "category": [
                 {
-                    "id": "http://moodle.org",
+                    "id": "http:\/\/www.example.com\/source_url",
                     "definition": {
+                        "type": "http:\/\/id.tincanapi.com\/activitytype\/source",
                         "name": {
-                            "en": "Moodle"
+                            "en": "Test source_name"
                         },
                         "description": {
-                            "en": "Moodle is a open source learning platform designed to provide educators, 
-                            administrators and learners with a single robust, secure and integrated system to 
-                            create personalised learning environments."
-                        },
-                        "type": "http://id.tincanapi.com/activitytype/source"
-                    },
-                    "objectType": "Activity"
+                            "en": "Test source_description"
+                        }
+                    }
                 }
             ]
-        }
-    },
-    "timestamp": "2015-06-17T12:10:07+01:00",
-    "object": {
-        "objectType": "Activity",
-        "id": "http://localhost/moodle/course.php?id=2",
-        "definition": {
-            "type": "http://lrs.learninglocker.net/define/type/moodle/course",
-            "name": {
-                "en": "My Test Course 1"
-            },
-            "description": {
-                "en": "<p>A test course.</p>"
+        },
+        "instructor": {
+            "name": "Test instructor_name",
+            "account": {
+                "homePage": "http:\/\/www.example.com\/instructor_url",
+                "name": "1"
             }
         }
     },
-    "authority": {
-        "objectType": "Agent",
-        "name": "New Client",
-        "mbox": "mailto:hello@learninglocker.net"
+    "timestamp": "2015-01-01T01:00Z",
+    "verb": {
+        "id": "http:\/\/www.tincanapi.co.uk\/verbs\/enrolled_onto_learning_plan",
+        "display": {
+            "en": "enrolled onto"
+        }
     },
-    "stored": "2015-06-17T11:10:07.938000+00:00",
-    "id": "89cd2edf-e90e-436e-9976-3afbf844bf70"
+    "object": {
+        "id": "http:\/\/www.example.com\/course_url",
+        "definition": {
+            "type": "http:\/\/lrs.learninglocker.net\/define\/type\/moodle\/course",
+            "name": {
+                "en": "Test course_name"
+            },
+            "description": {
+                "en": "Test course_description"
+            },
+            "extensions": {
+                "http:\/\/www.example.com\/course_ext_key": {
+                    "test_course_ext_key": "test_course_ext_value"
+                }
+            }
+        }
+    }
 }
