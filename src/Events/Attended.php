@@ -43,9 +43,11 @@ class Attended extends Event {
                         $this->readModule($opts),
                     ],
                     'category' => [
-                        'id' => 'http://xapi.trainingevidencesystems.com/recipes/attendance/0_0_1#simple',
-                        'definition' => [
-                            'type' => 'http://id.tincanapi.com/activitytype/recipe'
+                        [
+                            'id' => 'http://xapi.trainingevidencesystems.com/recipes/attendance/0_0_1#simple',
+                            'definition' => [
+                                'type' => 'http://id.tincanapi.com/activitytype/recipe'
+                            ]
                         ]
                     ],
                 ],

@@ -43,6 +43,6 @@ class AttendedTest extends EventTest {
         $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][1]);
         $this->assertEquals($input['attempt_duration'], $output['result']['duration']);
         $this->assertEquals($input['attempt_completion'], $output['result']['completion']);
-        $this->assertEquals('http://xapi.trainingevidencesystems.com/recipes/attendance/0_0_1#simple', $output['context']['contextActivities']['category'][0]['id']);
+        $this->assertEquals('http://xapi.trainingevidencesystems.com/recipes/attendance/0_0_1#simple', $output['context']['contextActivities']['category'][1]['id']);
     }
 }
