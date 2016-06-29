@@ -28,6 +28,6 @@ class EventUnenrolTest extends EventTest {
         $this->assertObject('session', $input, $output['object']);
         $this->assertObject('module', $input, $output['context']['contextActivities']['parent'][0]);
         $this->assertObject('course', $input, $output['context']['contextActivities']['grouping'][1]);
-        $this->assertEquals('http://xapi.trainingevidencesystems.com/recipes/attendance/0_0_1#detailed', $output['context']['contextActivities']['category'][0]['id']);
+        $this->assertEquals('http://xapi.trainingevidencesystems.com/recipes/attendance/0_0_1#detailed', $output['context']['contextActivities']['category'][1]['id']);
     }
 }
