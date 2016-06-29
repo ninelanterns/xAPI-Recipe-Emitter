@@ -27,7 +27,14 @@ class AttendedTest extends EventTest {
     }
 
     protected function assertOutput($input, $output) {
-        parent::assertOutput($input, $output);
+        $this->assertObject('app', $input, $output['context']['contextActivities']['grouping'][0]);
+        $this->assertObject('source', $input, $output['context']['contextActivities']['category'][0]);
+        $this->assertLog($input, $output);
+        $this->assertInfo(
+            $input['context_info'],
+            $output['context']['extensions']['http://lrs.learninglocker.net/define/extensions/info']
+        );
+        $this->assertValidXapiStatement($output);
         $this->assertUser($input, $output['actor'], 'attendee');
         $this->assertUser($input, $output['context']['instructor'], 'user');
         $this->assertVerb('http://adlnet.gov/expapi/verbs/attended', 'attended', $output['verb']);
