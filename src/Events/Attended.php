@@ -12,7 +12,8 @@ class Attended extends Event {
      * @override Event
      */
     public function read(array $opts) {
-        $statement = array_merge_recursive(parent::read($opts), [
+        $statement = array_merge(parent::read($opts), [
+            'actor' => $this->readUser($opts, 'attendee'),
             'verb' => [
                 'id' => 'http://adlnet.gov/expapi/verbs/attended',
                 'display' => $this->readVerbDisplay($opts),
@@ -53,9 +54,6 @@ class Attended extends Event {
                 ],
             ],
         ]);
-
-        // Overwrite actor, don't merge it. 
-        $statement['actor'] = $this->readUser($opts, 'attendee');
 
         return $statement;
     }
