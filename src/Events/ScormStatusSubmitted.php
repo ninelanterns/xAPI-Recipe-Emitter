@@ -17,14 +17,12 @@ class ScormStatusSubmitted extends Event {
                 'id' => 'http://adlnet.gov/expapi/verbs/completed',
                 'display' => $this->readVerbDisplay($opts),
             ],
-            'result' => [
-                'status' => $opts['scorm_status'],
-            ],
             'object' => $this->readModule($opts),
             'context' => [
                 'contextActivities' => [
                     'grouping' => [
                         $this->readCourse($opts),
+                        // Sco being acted upon
                     ],
                 ],
             ],

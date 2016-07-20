@@ -1,9 +1,7 @@
 <?php namespace XREmitter\Events;
 
 class ScormScorerawSubmitted extends Event {
-    protected static $verb_display = [
-        'en' => 'completed'
-    ];
+    protected static $verb_display;
 
     /**
      * Reads data for an event.
@@ -13,10 +11,7 @@ class ScormScorerawSubmitted extends Event {
      */
     public function read(array $opts) {
         return array_merge_recursive(parent::read($opts), [
-            'verb' => [
-                'id' => 'http://adlnet.gov/expapi/verbs/' . $opts['scorm_status'], // Make this verb match whatever comes through
-                'display' => $this->readVerbDisplay($opts),
-            ],
+            'verb' => $this->readScormVerb($opts),
             'result' => [
                 'score' => [
                     'raw' => $opts['scorm_score_raw'],

@@ -148,4 +148,34 @@ abstract class Event extends PhpObj {
         $lang = isset(static::$verb_display[$lang]) ? $lang : array_keys(static::$verb_display)[0];
         return [$lang => static::$verb_display[$lang]];
     }
+
+    protected function readScormVerb($opts) {
+        $scorm_status = $opts['scorm_status'];
+        $verb_base_url = 'http://adlnet.gov/expapi/verbs/';
+        $verb = array();
+
+        switch ($scorm_status) {
+            case 'failed':
+                $verb_url = $verb_base_url . $scorm_status;
+                $verb = $scorm_status;
+                break;
+            case 'passed':
+                $verb_url = $verb_base_url . $scorm_status;
+                $verb = $scorm_status;
+                break;
+            default:
+                $verb_url = $verb_base_url . 'completed';
+                $verb = 'completed';
+        }
+
+        static::$verb_display = ['en' => $verb];
+
+        $lang = [
+            'id' => $verb_url,
+            'display' => $this->readVerbDisplay($opts),
+        ];
+
+        return $lang;
+    }
+
 }
