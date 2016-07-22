@@ -156,7 +156,6 @@ abstract class EventTest extends PhpUnitTestCase {
             $input['context_info'],
             $output['context']['extensions']['http://lrs.learninglocker.net/define/extensions/info']
         );
-        echo(print_r($output, true));
         $this->assertValidXapiStatement($output);
     }
 
