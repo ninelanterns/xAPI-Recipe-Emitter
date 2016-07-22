@@ -168,7 +168,7 @@ abstract class Event extends PhpObj {
                 $verb = 'completed';
         }
 
-        static::$verbDisplay = ['en' => $verb];
+        static::$verb_display = ['en' => $verb];
 
         $lang = [
             'id' => $verbUrl,
