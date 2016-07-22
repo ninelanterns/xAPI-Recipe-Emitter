@@ -16,7 +16,9 @@ class ScormStatusSubmittedTest extends EventTest {
         return array_merge(
             parent::constructInput(),
             $this->contructObject('course'),
-            $this->contructObject('module')
+            $this->contructObject('module'),
+            $this->constructScormTracking(),
+            $this->constructScormScoes()
         );
     }
 

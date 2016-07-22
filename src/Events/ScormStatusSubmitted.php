@@ -22,7 +22,7 @@ class ScormStatusSubmitted extends Event {
                 'contextActivities' => [
                     'grouping' => [
                         $this->readCourse($opts),
-                        $this->readScormScoes($opts)
+                        $this->readScormScoes($opts),
                     ],
                 ],
             ],
