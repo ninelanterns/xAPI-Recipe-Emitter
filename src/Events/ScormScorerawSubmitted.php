@@ -25,20 +25,7 @@ class ScormScorerawSubmitted extends Event {
                 'contextActivities' => [
                     'grouping' => [
                         $this->readCourse($opts),
-                        /*
-                        { Sco launched
-                           "id":"http://adlnet.gov/courses/compsci/CS204/lesson01/01?attemptId=50fd6961-ab6c-4e75-e6c7-ca42dce50dd6",
-                           "definition":{
-                              "name":{
-                                 "en-US":"Attempt of CS204 lesson 01"
-                              },
-                              "description":{
-                                 "en-US":"The activity representing an attempt of lesson 01 in the course CS204"
-                              },
-                              "type": "http://adlnet.gov/expapi/activities/attempt"
-                           }
-                        }
-                        */
+                        $this->readScormScoes($opts),
                     ],
                 ],
             ],

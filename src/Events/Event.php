@@ -178,4 +178,19 @@ abstract class Event extends PhpObj {
         return $lang;
     }
 
+    protected function readScormScoes($opts) {
+        return [
+            'id' => $opts['module_url'],
+            'definition' => [
+                'type' => $opts['scorm_scoes_type'],
+                'name' => [
+                    $opts['context_lang'] => $opts['scorm_scoes_name'],
+                ],
+                'description' => [
+                    $opts['context_lang'] => $opts['scorm_scoes_description'],
+                ],
+            ],
+        ];
+    }
+
 }

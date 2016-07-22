@@ -128,6 +128,25 @@ abstract class EventTest extends PhpUnitTestCase {
         ];
     }
 
+    protected function constructScormTracking() {
+        return [
+            'scorm_score_raw' => 100,
+            'scorm_score_min' => 0,
+            'scorm_score_scaled' => 1,
+            'scorm_score_max' => 100,
+            'scorm_status' => 'completed',
+        ];
+    }
+    protected function constructScormScoes() {
+        return [
+            'scorm_scoes_id' =>  1,
+            'scorm_scoes_url' =>  'http://www.example.com/module_url',
+            'scorm_scoes_type' => static::$xapi_type.'sco',
+            'scorm_scoes_name' => 'Sco name',
+            'scorm_scoes_description' => 'Sco Description',
+        ];
+    }
+
     protected function assertOutput($input, $output) {
         $this->assertUser($input, $output['actor'], 'user');
         $this->assertObject('app', $input, $output['context']['contextActivities']['grouping'][0]);
@@ -137,6 +156,7 @@ abstract class EventTest extends PhpUnitTestCase {
             $input['context_info'],
             $output['context']['extensions']['http://lrs.learninglocker.net/define/extensions/info']
         );
+        echo(print_r($output, true));
         $this->assertValidXapiStatement($output);
     }
 
