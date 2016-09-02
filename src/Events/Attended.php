@@ -14,20 +14,28 @@ class Attended extends Event {
     public function read(array $opts) {
         $statement = array_merge_recursive(parent::read($opts), [
             'verb' => [
-                'id' => 'http://adlnet.gov/expapi/verbs/attended',
+                'id' => 'http://id.tincanapi.com/verb/mentored',
                 'display' => $this->readVerbDisplay($opts),
             ],
             'object' => [
-                'id' => $opts['session_url'],
-                'definition' => [
-                    'type' => $opts['session_type'],
-                    'name' => [
-                        $opts['context_lang'] => $opts['session_name'],
-                    ],
-                    'description' => [
-                        $opts['context_lang'] => $opts['session_description'],
-                    ]
+                'objectType' => 'SubStatement',
+                'actor' => $this->readUser($opts, 'relateduser'),
+                'verb' => [
+                    'id' => 'http://adlnet.gov/expapi/verbs/attended',
+                    'display' => $this->readVerbDisplay($opts),
                 ],
+                /*'object' => [
+                    'id' => $opts['session_url'],
+                    'definition' => [
+                        'type' => $opts['session_type'],
+                        'name' => [
+                            $opts['context_lang'] => $opts['session_name'],
+                        ],
+                        'description' => [
+                            $opts['context_lang'] => $opts['session_description'],
+                        ]
+                    ],
+                ],*/
             ],
             'result' => [
                 'duration' => $opts['attempt_duration'],
