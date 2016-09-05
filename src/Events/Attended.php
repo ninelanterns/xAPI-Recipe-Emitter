@@ -14,17 +14,17 @@ class Attended extends Event {
     public function read(array $opts) {
         $statement = array_merge_recursive(parent::read($opts), [
             'verb' => [
-                'id' => 'http://id.tincanapi.com/verb/mentored',
-                'display' => $this->readVerbDisplay($opts),
+                'id' => 'http://activitystrea.ms/specs/json/schema/activity-schema.html#verbs',
+                'display' => array('en' => 'confirmed'),
             ],
             'object' => [
                 'objectType' => 'SubStatement',
                 'actor' => $this->readUser($opts, 'relateduser'),
                 'verb' => [
                     'id' => 'http://adlnet.gov/expapi/verbs/attended',
-                    'display' => $this->readVerbDisplay($opts),
+                    'display' => array('en' => 'attended'),
                 ],
-                /*'object' => [
+                'object' => [
                     'id' => $opts['session_url'],
                     'definition' => [
                         'type' => $opts['session_type'],
@@ -35,7 +35,26 @@ class Attended extends Event {
                             $opts['context_lang'] => $opts['session_description'],
                         ]
                     ],
-                ],*/
+                ],
+                'context' => [
+                    'attendee' => $this->readUser($opts, 'relateduser'),
+                    'contextActivities' => [
+                        'grouping' => [
+                            $this->readCourse($opts),
+                        ],
+                        'parent' => [
+                            $this->readModule($opts),
+                        ],
+                        'category' => [
+                            [
+                                'id' => 'http://xapi.trainingevidencesystems.com/recipes/attendance/0_0_1#simple',
+                                'definition' => [
+                                    'type' => 'http://id.tincanapi.com/activitytype/recipe'
+                                ]
+                            ]
+                        ],
+                    ],
+                ],
             ],
             'result' => [
                 'duration' => $opts['attempt_duration'],
@@ -63,8 +82,9 @@ class Attended extends Event {
         ]);
 
         // Overwrite actor, don't merge it. 
-        $statement['actor'] = $this->readUser($opts, 'attendee');
-
+        //$statement['actor'] = $this->readUser($opts, 'attendee');
+        
+        unset($statement['context']['platform']);
         return $statement;
     }
 }
