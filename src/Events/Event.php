@@ -55,7 +55,10 @@ abstract class Event extends PhpObj {
     }
 
     protected function readUser(array $opts, $key) {
+        global $DB;
+        $email = $DB->get_field('user', 'email', array('id' => $opts[$key.'_id']));
         return [
+            'mbox' => 'mailto:'.$email,
             'name' => $opts[$key.'_name'],
             'account' => [
                 'homePage' => $opts[$key.'_url'],
