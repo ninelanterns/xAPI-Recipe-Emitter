@@ -56,15 +56,22 @@ abstract class Event extends PhpObj {
 
     protected function readUser(array $opts, $key) {
         global $DB;
+        
+        $config = get_config('logstore_xapi', 'useridentifier');
+        
         $email = $DB->get_field('user', 'email', array('id' => $opts[$key.'_id']));
-        return [
-            'mbox' => 'mailto:'.$email,
-            'name' => $opts[$key.'_name'],
-            'account' => [
+        $userarray = array('name' => $opts[$key.'_name']);
+        
+        if (!empty($config) || $config == 'account') {
+            $userarray['account'] = array(
                 'homePage' => $opts[$key.'_url'],
-                'name' => $opts[$key.'_id'],
-            ],
-        ];
+                'name' => $opts[$key.'_id']
+            );
+        } else {
+            $userarray['mbox'] = 'mailto:'.$email;
+        }
+        
+        return $userarray;
     }
 
     protected function readActivity(array $opts, $key) {
