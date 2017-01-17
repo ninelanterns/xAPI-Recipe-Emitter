@@ -62,7 +62,7 @@ abstract class Event extends PhpObj {
         $email = $DB->get_field('user', 'email', array('id' => $opts[$key.'_id']));
         $userarray = array('name' => $opts[$key.'_name']);
         
-        if (!empty($config) || $config == 'account') {
+        if (empty($config) || $config == 'account') {
             $userarray['account'] = array(
                 'homePage' => $opts[$key.'_url'],
                 'name' => $opts[$key.'_id']
