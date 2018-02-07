@@ -29,12 +29,17 @@ class CourseCompleted extends Event
      * @override Event
      */
     public function read(array $opts) {
-        return array_merge_recursive(parent::read($opts), [
+        $data = array_merge_recursive(parent::read($opts), [
             'verb' => [
                 'id' => 'http://adlnet.gov/expapi/verbs/completed',
                 'display' => $this->readVerbDisplay($opts),
             ],
             'object' => $this->readCourse($opts),
         ]);
+        
+        // course completion should look at related user as the actor FHLHAS-497
+        $data['actor'] = $this->readUser($opts, 'relateduser');
+        
+        return $data;
     }
 }
